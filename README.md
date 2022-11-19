@@ -1,2 +1,5 @@
 # BellTower
-bell tower simulator setup
+Bell tower simulator setup
+
+Bell Sensor -> Arduino <-> RPI -> Speakers
+                           RPI -> PC
