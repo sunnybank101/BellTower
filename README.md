@@ -14,10 +14,13 @@ Note: This code assumes an Arduino Nano but can easily be modified for other Ard
 <h2>Raspberry PI Setup</h2>
 <p>Any version of a Raspberry PI is suitable for this purpose but one with a headphone socket is preferable
 <list>
-<li>Install your preferred OS.. eg Raspberry Pi OS with desktop from https://www.raspberrypi.com/software/
-<li>Follow the instructions here to install NodeRed https://nodered.org/docs/getting-started/raspberrypi
-<li>Log into NodeRed and import [flows.nodered]
+<li>Install your preferred OS.. eg Raspberry Pi OS with desktop from https://www.raspberrypi.com/software/ with the user as "tower"
+<li>Follow the <a href="https://nodered.org/docs/getting-started/raspberrypi">instructions here to install NodeRed</a>
+<li>Log into NodeRed and import [flows.nodered].  Allow any library dependancies to be installed automatically as required
 <li>Plug the Arduino into the Raspberry PI
-<li>Follow the instructions in the flow comment to create symlinks to the Arduino serial port (so that no matter what is plugged into the RPI serial ports the arduino will always be addressable as /dev/ttyUSB_ARDUINO
-<li>.
+<li>Follow the instructions in the flow comment to create symlinks to the Arduino serial port [so that no matter what is plugged into the RPI serial ports the arduino will always be addressable as /dev/ttyUSB_ARDUINO]
+<li>Plug speakers into the arduino headphone socket
+<li>Transfer your preferred bell sound files as "1.wav" etc to  /home/tower/.node-red/audio.. Check the setup node to confirm that it correctly specify the audio files 
+<li>Use the Test flows to check that the audio files are played correctly
+<li>
 </list>
