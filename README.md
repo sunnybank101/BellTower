@@ -38,9 +38,9 @@ Note: This code assumes an Arduino Nano but can easily be modified for other Ard
 
 <h2>Tower Installation [TBC]</h2>
   <li>The Raspberry PI and arduino are installed somewhere in the ringing chamber - out of the way but accessible - somewhere near a power switch to turn the whole lot on and off easily
-  <li>8 core and 4 core alarm cable is used to run from the Arduino to where the bells hang (this is cheap and available in good lengths).  Its likely to be a good idea to run 2*8core cable up to a central spot then 4 core to each bell
-  <li>Attach each bell sensor to a convenient support aligned to each bell wheel. 
-  <li>White duct tape can be used on a specific spot the wheel to ensure good IR sensor reflectivity
+  <li>8 core and 4 core alarm cable is used to run from the Arduino to where the bells hang (this is cheap and available in good lengths).  eg run 2*8core cables up to a central spot then 4 core to each bell
+  <li>Attach each bell sensor to a convenient support aligned to each bell wheel. Ensure nothing is going to catch the sensor as the bell swings
+  <li>White duct tape can be used on the wheel to ensure good IR sensor reflectivity
   <li>
   <li>
   <li>TBD Installation pictures...
