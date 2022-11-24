@@ -49,9 +49,9 @@ Note: This code assumes an Arduino Nano but can easily be modified for other Ard
 
 <h2>Fine Tuning [TBD]</h2>
 <list>
-  <li>Audio Delays - from sense to audio playing - see the NodeRed flow
-  <li>Consider remote access to the Raspberry PI eg Wifi AP
-  <li>Consider how to easily update the Arduino code (eg from the Raspberry PI)
+  <li>Audio Delays - from sense to audio playing - see the NodeRed flow to introduce the appropriate delays per bell
+  <li>Consider remote access to the Raspberry PI eg <a href="https://www.tomshardware.com/how-to/raspberry-pi-access-point">Wifi AP</a>
+  <li>Consider how to easily update the Arduino code (eg install the Arduino IDE on the Raspberry PI)
   <li>
   <li>
 </list>
