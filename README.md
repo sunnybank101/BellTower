@@ -10,7 +10,7 @@ The sensors being used are cheap and readily available KY-032 IR obstacle sensor
 
 The Raspberry PI is connected to the Arduino via a USB cable therefore providing power to it.  The Arduino in turn also powers all the KY-032 sensors (they are very low power).  3 wires are required to each sensor - Ground, +5v and Sense.  The Ground and +5v can be shared from the Arduino to all the sensors but each sensor requires its own Sense wire run independently to the Arduino.  Therefore 8 bells require 10 wires from the Arduino to where the bells are hung.  Cheap multicore house alarm cable is recomended for this purpose.
 
-<h2>Raspberry PI Setup</h2>
+<h2>Raspberry PI Setup 1</h2>
 <p>Any version of a Raspberry PI is suitable for this purpose but one with a headphone socket is preferable
 <list>
   <li>Install your preferred OS.. eg Raspberry Pi OS with desktop from https://www.raspberrypi.com/software/ with the user as "tower"
@@ -29,7 +29,7 @@ The Raspberry PI is connected to the Arduino via a USB cable therefore providing
 </list>
 Note: This code assumes an Arduino Nano but can easily be modified for other Arduino device.
 
-<h2>Final Raspberry PI Setup</h2>
+<h2>Raspberry PI Setup 2</h2>
 <list>
   <li>Connect test sensors to the Arduino as per the pin definitions in "arduinoKY032.ino"
   <li>Plug the Arduino into the Raspberry PI
