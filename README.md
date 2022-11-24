@@ -5,7 +5,7 @@ Main simulator flow  [Bell Sensor -> Arduino -> RaspberryPI -> Speakers]
 <br>
 plus [RPI -> PC] for serial output to a pc running bell ringing software
 
-Sensors used are readily available KY-032 IR obstacle sensors but others can be used with changes to the Arduino code.  R5 and R6 below allow you to alter sensitivity and distance<br>
+The sensors being used are readily available KY-032 IR obstacle sensors but others could be used with changes to the Arduino code.  The KY-032 sensor is particularly good because R5 and R6 in the image below allow you to alter sensitivity and distance of detection<br>
 <img src="KY-032.png"  alt="KY-032" width="300" height="400">
 
 <h2>Raspberry PI Setup</h2>
