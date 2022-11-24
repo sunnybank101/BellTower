@@ -3,7 +3,7 @@ Bell tower simulator setup
 
 Main simulator flow  [Bell Sensor -> Arduino -> RaspberryPI -> Speakers]
 <br>
-plus [RPI -> PC] for serial output to a pc running bell ringing software
+plus [RaspberryPI -> PC] for serial output to a pc running bell ringing software
 
 The sensors being used are cheap and readily available KY-032 IR obstacle sensors (others could be used with changes to the Arduino code).  The KY-032 sensor is particularly good because R5 and R6 in the image below allow you to alter sensitivity and distance of detection.<br>
 <img src="KY-032.png"  alt="KY-032" width="300" height="400">
@@ -19,7 +19,7 @@ The sensors being used are cheap and readily available KY-032 IR obstacle sensor
   <li>Transfer your preferred bell sound files as "1.wav" etc to  /home/tower/.node-red/audio.. Check the nodered 'configuration' nodes to confirm that it correctly specifies the location of the audio files 
   <li>Use the Test flows to check that the audio files are played correctly
 </list>
-  
+
 <h2>Arduino Setup</h2>
 <list>
   <li>Install the Arduino IDE (on whatever machine is easiest.. it can be the raspberry pi)
@@ -31,6 +31,6 @@ Note: This code assumes an Arduino Nano but can easily be modified for other Ard
 <list>
   <li>Connect the sensors to the Arduino as per the pin definitions in "arduinoKY032.ino"
   <li>Plug the Arduino into the Raspberry PI
-  <li>Follow the instructions in the <a href="https://www.freva.com/assign-fixed-usb-port-names-to-your-raspberry-pi/">nodered flow comments</a> to create symlinks to the Arduino serial port [ie no matter which USB the RPI is connected the arduino will always be addressable as /dev/ttyUSB_ARDUINO]
+  <li>Follow the instructions <a href="https://www.freva.com/assign-fixed-usb-port-names-to-your-raspberry-pi/">here</a> to create symlinks to the Arduino serial port [ie no matter which USB the RPI is connected the arduino will always be addressable as /dev/ttyUSB_ARDUINO]
 </list>
 
