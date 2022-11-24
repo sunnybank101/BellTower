@@ -8,7 +8,11 @@ plus optionally [RaspberryPI -> PC] for serial output to a pc or laptop running 
 The sensors being used are cheap and readily available KY-032 IR obstacle sensors (others could be used with changes to the Arduino code).  The KY-032 sensor is particularly good because R5 and R6 in the image below allow you to alter sensitivity and distance of detection.<br>
 <img src="KY-032.png"  alt="KY-032" width="300" height="400">
 
-The Raspberry PI is connected to the Arduino via a USB cable therefore providing power to it.  The Arduino in turn also powers all the KY-032 sensors (they are very low power).  3 wires are required to each sensor - Ground, +5v and Sense.  The Ground and +5v can be shared from the Arduino to all the sensors but each sensor requires its own Sense wire run independently to the Arduino.  Therefore 8 bells require 10 wires from the Arduino to where the bells are hung.  Cheap multicore house alarm cable is recomended for this purpose.
+The Raspberry PI is connected to the Arduino via a USB cable therefore providing power to it.  The Arduino in turn also powers all the KY-032 sensors (they are very low power).  3 wires are required to each sensor - Ground, +5v and Sense.  The Ground and +5v can be shared from the Arduino to all the sensors but each sensor requires its own Sense wire run independently to the Arduino.  Therefore 8 bells require 10 wires from the Arduino to where the bells are hung.  Cheap multicore house alarm cable is recomended for this purpose
+
+The Arduino monitors each Sense wire from the sensors via the Arduino pin it is connected to.  If the Sense pin changes then the bell has swung past the sensor and the audio sound should be triggered following a suitable delay in milliseconds.  A simple NodeRed flow on the Raspberry PI is used to monitor the USB serial line comming from the Arduino - the Arduino outputs a sinlge character '1' to 'x' representing each bell sensor trigger.  The NodeRed flow uses the bell number to trigger an audio wav file to be played
+
+The NodeRed flow also attempts to forward the same bell number ie '1' to 'x' to a second serial port so that optionally a computer/laptop can be used to run bell ringing software such as Virtual Belfry.
 
 <h2>Raspberry PI Setup 1</h2>
 <p>Any version of a Raspberry PI is suitable for this purpose but one with a headphone socket is preferable
