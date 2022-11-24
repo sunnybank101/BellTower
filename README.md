@@ -1,4 +1,4 @@
-# BellTower
+# BellTower Simulator
 A simple bell tower simulator setup - for installation into a tower of church bells for silent ringing practice.
 
 Main simulator flow  [Bell Sensor -> Arduino -> RaspberryPI -> Speakers]
