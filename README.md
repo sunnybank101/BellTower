@@ -21,7 +21,7 @@ Sensors used are readily available KY-032 IR obstacle sensors but others can be 
   
 <h2>Arduino Setup</h2>
 <list>
-  <li>Install the Arduino IDE
+  <li>Install the Arduino IDE (on whatever machine is easiest.. it can be the raspberry pi)
   <li>Using the ArduinoIDE upload [<a href="arduinoKY032.ino">arduinoKY032.ino</a>] to a suitable device.. eg an <a href="https://www.teachmemicro.com/wp-content/uploads/2019/06/Arduino-Nano-pinout.jpg">Arduino Nano</a><br>
 </list>
 Note: This code assumes an Arduino Nano but can easily be modified for other Arduino device.
