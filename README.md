@@ -36,7 +36,8 @@ Note: This code assumes an Arduino Nano but can easily be modified for other Ard
   <li>Follow the instructions <a href="https://www.freva.com/assign-fixed-usb-port-names-to-your-raspberry-pi/">here</a> to create symlinks to the Arduino serial port [ie no matter which USB the RPI is connected the arduino will always be addressable as /dev/ttyUSB_ARDUINO]
 </list>
 
-<h2>Tower Installation [TBC]</h2>
+<h2>Tower Installation [TBD]</h2>
+<list>
   <li>The Raspberry PI and arduino are installed somewhere in the ringing chamber - out of the way but accessible - somewhere near a power switch to turn the whole lot on and off easily
   <li>8 core and 4 core alarm cable is used to run from the Arduino to where the bells hang (this is cheap and available in good lengths).  eg run 2*8core cables up to a central spot then 4 core to each bell
   <li>Attach each bell sensor to a convenient support aligned to each bell wheel. Ensure nothing is going to catch the sensor as the bell swings
@@ -44,8 +45,13 @@ Note: This code assumes an Arduino Nano but can easily be modified for other Ard
   <li>
   <li>
   <li>TBD Installation pictures...
-<list>
-  
 </list>
 
-
+<h2>Fine Tuning [TBD]</h2>
+<list>
+  <li>Audio Delays - from sense to audio playing - see the NodeRed flow
+  <li>Consider remote access to the Raspberry PI eg Wifi AP
+  <li>Consider how to easily update the Arduino code (eg from the Raspberry PI)
+  <li>
+  <li>
+</list>
