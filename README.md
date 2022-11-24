@@ -18,7 +18,7 @@ The Raspberry PI is connected to the Arduino via a USB cable therefore providing
   <li>Log into NodeRed and import [<a href="nodered-flow.txt">nodered-flow.txt</a>]
   <li>Allow any library dependencies to be installed automatically as required
   <li>Plug speakers into the arduino headphone socket
-  <li>Transfer your preferred bell sound files as "1.wav" etc to  /home/tower/.node-red/audio.. Check the nodered 'configuration' nodes to confirm that it correctly specifies the location of the audio files 
+  <li>Transfer your preferred bell sound files as "1.wav" etc to  /home/tower/.node-red/audio.. Check the nodered 'store' nodes to confirm that it correctly specifies the location of the audio files 
   <li>Use the Test flows to check that the audio files are played correctly
 </list>
 
