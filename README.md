@@ -8,6 +8,8 @@ plus optionally [RaspberryPI -> PC] for serial output to a pc or laptop running 
 The sensors being used are cheap and readily available KY-032 IR obstacle sensors (others could be used with changes to the Arduino code).  The KY-032 sensor is particularly good because R5 and R6 in the image below allow you to alter sensitivity and distance of detection.<br>
 <img src="KY-032.png"  alt="KY-032" width="300" height="400">
 
+The Raspberry PI is connected to the Arduino via a USB cable therefore providing power to it.  The Arduino in turn also powers all the KY-032 sensors (they are very low power).  3 wires are required to each sensor - Ground, +5v and Sense.  The Ground and +5v can be shared from the Arduino to all the sensors but each sensor requires its own Sense wire run independantly to the Arduino.  Therefore 8 bells require 10 wires from the Arduino to where the bells are hung
+
 <h2>Raspberry PI Setup</h2>
 <p>Any version of a Raspberry PI is suitable for this purpose but one with a headphone socket is preferable
 <list>
@@ -27,10 +29,20 @@ The sensors being used are cheap and readily available KY-032 IR obstacle sensor
 </list>
 Note: This code assumes an Arduino Nano but can easily be modified for other Arduino device.
 
-<h2>Final Setup</h2>
+<h2>Final Raspberry PI Setup</h2>
 <list>
-  <li>Connect the sensors to the Arduino as per the pin definitions in "arduinoKY032.ino"
+  <li>Connect test sensors to the Arduino as per the pin definitions in "arduinoKY032.ino"
   <li>Plug the Arduino into the Raspberry PI
   <li>Follow the instructions <a href="https://www.freva.com/assign-fixed-usb-port-names-to-your-raspberry-pi/">here</a> to create symlinks to the Arduino serial port [ie no matter which USB the RPI is connected the arduino will always be addressable as /dev/ttyUSB_ARDUINO]
 </list>
+
+<h2>Tower Installation [TBC]</h2>
+  <li>The Raspberry PI and arduino are installed somewhere in the ringing chamber
+  <li>8 core / 4 core alarm cable is used to run from the Arduino to where the bells hang (this is cheap and available in good lengths).  In many cases its probably best to run 2*8core cable up to a central spot then 4 core to each bell.
+  <li>
+  <li>
+<list>
+  
+</list>
+
 
