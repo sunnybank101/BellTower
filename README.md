@@ -3,7 +3,7 @@ Bell tower simulator setup
 
 Main simulator flow  [Bell Sensor -> Arduino -> RaspberryPI -> Speakers]
 <br>
-plus [RaspberryPI -> PC] for serial output to a pc running bell ringing software
+plus optionally [RaspberryPI -> PC] for serial output to a pc or laptop running additional bell ringing software
 
 The sensors being used are cheap and readily available KY-032 IR obstacle sensors (others could be used with changes to the Arduino code).  The KY-032 sensor is particularly good because R5 and R6 in the image below allow you to alter sensitivity and distance of detection.<br>
 <img src="KY-032.png"  alt="KY-032" width="300" height="400">
@@ -14,7 +14,7 @@ The sensors being used are cheap and readily available KY-032 IR obstacle sensor
   <li>Install your preferred OS.. eg Raspberry Pi OS with desktop from https://www.raspberrypi.com/software/ with the user as "tower"
   <li>Follow the <a href="https://nodered.org/docs/getting-started/raspberrypi">instructions here to install NodeRed</a>
   <li>Log into NodeRed and import [<a href="nodered-flow.txt">nodered-flow.txt</a>]
-  <li>Allow any library dependancies to be installed automatically as required
+  <li>Allow any library dependencies to be installed automatically as required
   <li>Plug speakers into the arduino headphone socket
   <li>Transfer your preferred bell sound files as "1.wav" etc to  /home/tower/.node-red/audio.. Check the nodered 'configuration' nodes to confirm that it correctly specifies the location of the audio files 
   <li>Use the Test flows to check that the audio files are played correctly
