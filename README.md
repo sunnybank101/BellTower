@@ -16,7 +16,7 @@ Note: This code assumes an Arduino Nano but can easily be modified for other Ard
 <list>
 <li>Install your preferred OS.. eg Raspberry Pi OS with desktop from https://www.raspberrypi.com/software/ with the user as "tower"
 <li>Follow the <a href="https://nodered.org/docs/getting-started/raspberrypi">instructions here to install NodeRed</a>
-<li>Log into NodeRed and import [flows.nodered].  Allow any library dependancies to be installed automatically as required
+<li>Log into NodeRed and import [nodered-flow.txt].  Allow any library dependancies to be installed automatically as required
 <li>Plug the Arduino into the Raspberry PI
 <li>Follow the instructions in the flow comment to create symlinks to the Arduino serial port [so that no matter what is plugged into the RPI serial ports the arduino will always be addressable as /dev/ttyUSB_ARDUINO]
 <li>Plug speakers into the arduino headphone socket
