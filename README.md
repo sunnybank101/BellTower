@@ -2,8 +2,8 @@
 Bell tower simulator setup
 
 Main simulator flow  [Bell Sensor -> Arduino -> RaspberryPI -> Speakers]
-
-[RPI -> PC]  for serial output to pc bell ringing software
+<br>
+plus [RPI -> PC] for serial output to a pc running bell ringing software
 
 Sensors used are readily available KY-032 IR obstacle sensors but others can be used with changes to the Arduino code
 <img src="KY-032.png"  alt="KY-032" width="300" height="400">
