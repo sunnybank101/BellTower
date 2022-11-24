@@ -13,7 +13,8 @@ Sensors used are readily available KY-032 IR obstacle sensors but others can be 
 <list>
   <li>Install your preferred OS.. eg Raspberry Pi OS with desktop from https://www.raspberrypi.com/software/ with the user as "tower"
   <li>Follow the <a href="https://nodered.org/docs/getting-started/raspberrypi">instructions here to install NodeRed</a>
-  <li>Log into NodeRed and import [<a href="nodered-flow.txt">nodered-flow.txt</a>].  Allow any library dependancies to be installed automatically as required
+  <li>Log into NodeRed and import [<a href="nodered-flow.txt">nodered-flow.txt</a>]
+  <li>Allow any library dependancies to be installed automatically as required
   <li>Plug speakers into the arduino headphone socket
   <li>Transfer your preferred bell sound files as "1.wav" etc to  /home/tower/.node-red/audio.. Check the nodered 'configuration' nodes to confirm that it correctly specifies the location of the audio files 
   <li>Use the Test flows to check that the audio files are played correctly
@@ -30,6 +31,6 @@ Note: This code assumes an Arduino Nano but can easily be modified for other Ard
 <list>
   <li>Connect the sensors to the Arduino as per the pin definitions in "arduinoKY032.ino"
   <li>Plug the Arduino into the Raspberry PI
-  <li>Follow the instructions in the nodered flow comments to create symlinks to the Arduino serial port [ie no matter which USB the RPI is connected the arduino will always be addressable as /dev/ttyUSB_ARDUINO]
+  <li>Follow the instructions in the <a href="https://www.freva.com/assign-fixed-usb-port-names-to-your-raspberry-pi/">nodered flow comments</a> to create symlinks to the Arduino serial port [ie no matter which USB the RPI is connected the arduino will always be addressable as /dev/ttyUSB_ARDUINO]
 </list>
 
