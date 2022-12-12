@@ -56,6 +56,7 @@ Note: This code assumes an Arduino Nano but can easily be modified for other Ard
 <h2>Fine Tuning [TBD]</h2>
 <list>
   <li>Audio Delays - from sense to audio playing - see the NodeRed flow to introduce the appropriate delays per bell
+  <li>Add a USB serial adapter to the raspberry PI and using a second serial adapter connect the raspberry PI to a secondary laptop to run 3rd party ringing software eg <a href="https://www.belfryware.com/">Virtual Belfry</a>.  Note: when configured in the NodeRed flow the raspberry pi will output a single ascii character representing the bell number eg '1'.  This complies with the "Bagley Multi-Bell Interface" format <a href="https://www.abelsim.co.uk/doc/mbiconn.htm">described here</a>
   <li>Consider remote access to the Raspberry PI eg <a href="https://www.tomshardware.com/how-to/raspberry-pi-access-point">Wifi AP</a>
   <li>Consider how to easily update the Arduino code (eg install the Arduino IDE on the Raspberry PI)
   <li>Install apache2 and add a web homepage (eg <a href="index.html">index.html</a>)
