@@ -58,6 +58,5 @@ Note: This code assumes an Arduino Nano but can easily be modified for other Ard
   <li>Audio Delays - from sense to audio playing - see the NodeRed flow to introduce the appropriate delays per bell
   <li>Consider remote access to the Raspberry PI eg <a href="https://www.tomshardware.com/how-to/raspberry-pi-access-point">Wifi AP</a>
   <li>Consider how to easily update the Arduino code (eg install the Arduino IDE on the Raspberry PI)
-  <li>Add a web intro page to the server (eg <a href="arduinoKY032.ino">index.html</a>)
-  <li>
+  <li>Install apache2 and add a web homepage (eg <a href="index.html">index.html</a>)
 </list>
