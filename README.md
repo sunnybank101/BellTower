@@ -21,7 +21,7 @@ The NodeRed flow also attempts to forward the same bell number ie '1' to 'x' to 
 <list>
   <li>Install your preferred OS.. eg Raspberry Pi OS with desktop from https://www.raspberrypi.com/software/ with the user as "tower"
   <li>Follow the <a href="https://nodered.org/docs/getting-started/raspberrypi">instructions here to install NodeRed</a>
-  <li>Log into NodeRed and import [<a href="nodered-flow.txt">nodered-flow.txt</a>]
+  <li>Log into NodeRed and import [<a href="nodered/flow.json">nodered/flow.json</a>]
   <li>Allow any library dependencies to be installed automatically as required
   <li>Plug speakers into the arduino headphone socket
   <li>Transfer your preferred bell sound files as "1.wav" etc to  /home/tower/.node-red/audio.. Check the nodered 'store' nodes to confirm that it correctly specifies the location of the audio files 
