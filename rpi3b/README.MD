@@ -3,7 +3,7 @@
 
 <p>Binary flash images are too large to be stored in github so they are currently hosted <a href="https://drive.google.com/drive/folders/1uffMYFfXzFqwHFsLVVnfenaS6MA3xS1N?usp=share_link">in google drive</a>
 
-<p>Each image contains the latest raspbian OS, latest fixes and a working configuration of the NodeRed based Bell Simulator at the time of imaging
+<p>Each image contains the latest raspbian OS with desktop, latest OS and application fixes and a working configuration of the NodeRed based Bell Simulator at the time of imaging
 
 <li>[<a href="https://drive.google.com/uc?export=download&id=1Gj4UF2BNcFBqTJAJ93hk8MCRWla3CPoQ">towerpi-13-12.7z</a>]  image created December 2022
 
