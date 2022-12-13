@@ -1,0 +1,82 @@
+<h1>Tower Ringing Visualiser</h1>
+
+<p align=center>
+
+<canvas id="ringingCanvas" width="820" height="120" style="border:1px solid #000000;">
+</canvas>
+
+<p align=center>Displaying bells as they are rung...
+
+<p align=center><a href="/index.html">Circle Diagram</a>
+
+<script>
+		// ====================================================================================
+		
+		
+		function drawBell( bell, state )
+			{
+			var c = document.getElementById("ringingCanvas");
+			var ctx = c.getContext("2d");
+			
+			ctx.lineWidth = 5;
+			ctx.strokeStyle = '#003300';
+			ctx.fillStyle = 'black';
+			ctx.font = "30px Arial";
+			
+			//console.log( "bell:" + bell + " - " + state );
+			
+			ctx.beginPath();
+			ctx.arc( 60 + ((bell-1)*100), 60, 40, 0, 2 * Math.PI);
+			if( state == "ON" ) ctx.fillStyle = 'green'; else ctx.fillStyle = 'white';
+			ctx.fill();
+			ctx.stroke();
+			ctx.closePath();
+			ctx.fillStyle = 'black';
+			ctx.fillText(""+bell, 50 + ((bell-1)*100), 70,);
+			}
+		
+		// draw the bells
+		drawBell(1, null);
+		drawBell(2, null);
+		drawBell(3, null);
+		drawBell(4, null);
+		drawBell(5, null);
+		drawBell(6, null);
+		drawBell(7, null);
+		drawBell(8, null);
+		
+		var connection = null;
+		
+		if( connection == null ) {
+			connection = new WebSocket('ws://' + document.location.host + '/ws/bell');
+			}
+		
+		// When the connection is open, send some data to the server
+		connection.onopen = function () {
+			//connection.send('Ping'); // Send the message 'Ping' to the server
+			};
+		
+		// When the connection is open, send some data to the server
+		connection.onclose = function () {
+			console.log('WebSocket Closed...');
+			};
+		
+		// Log errors
+		connection.onerror = function (error) {
+			console.log('WebSocket Error ' + error);
+			};
+		
+		// Log messages from the server
+		connection.onmessage = function (e) {
+				//console.log('ServerResponse: ' + e.data);
+				
+				var d = e.data.split(',');
+				
+				if( d[1] == "ON" )
+					drawBell( Number(d[0]), "ON" );
+				else
+					drawBell( Number(d[0]), "OFF" );
+				
+			};
+		
+</script>
