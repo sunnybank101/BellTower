@@ -21,6 +21,11 @@ A simple NodeRed flow on the Raspberry PI is used to monitor the USB serial line
 <h2>Raspberry PI Binary Image</h1>
 <p>If you have a Raspberry PI v3 B+ and at least an 8GB flash card then you can use the <a href="rpi3b/dec22.img">binary image</a> provided to fast start your setup.  This image created in December 2022 contains the latest raspbian OS, latest fixes and everything discussed below.  You can use the <a href="https://www.raspberrypi.com/software/">Raspberry PI Imager</a> to install it on a suitable flash card
 <p>You will need the following id's and passwords with this image
+<list>
+<li>Wifi AP is "belltower" with password "t0w3r"
+<li>Raspbian user login is "tower" with password "t0w3r".. ssh remote access is also enabled for this id/pw
+<li>NodeRed login is "tower" with password "t0w3r"
+</list>
 
 <h2>Raspberry PI Setup 1</h2>
 <p>Any version of a Raspberry PI is suitable for this purpose but one with a headphone socket is preferable
