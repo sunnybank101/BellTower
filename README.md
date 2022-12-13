@@ -27,6 +27,7 @@ A simple NodeRed flow on the Raspberry PI is used to monitor the USB serial line
 <li>Raspbian user login is "tower" with password "t0w3r" [ssh remote access is also enabled for this id/pw]
 <li>NodeRed login is "tower" with password "t0w3r"
 </list>
+<p>Your PI should start up with the AP belltower active, log in and direct your browser to http:\\10.42.0.1
 
 <h2>Raspberry PI Setup 1</h2>
 <p>Any version of a Raspberry PI is suitable for this purpose but one with a headphone socket is preferable
