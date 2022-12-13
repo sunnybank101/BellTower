@@ -5,6 +5,6 @@
 
 <p>Each image contains the latest raspbian OS, latest fixes and a working configuration of the NodeRed based Bell Simulator at the time of imaging
 
-<li>[<a href="https://drive.google.com/file/d/1Gj4UF2BNcFBqTJAJ93hk8MCRWla3CPoQ/view?usp=share_link">towerpi-13-12.7z</a>]  image created December 2022
+<li>[<a href="https://drive.google.com/uc?export=download&id=1Gj4UF2BNcFBqTJAJ93hk8MCRWla3CPoQ">towerpi-13-12.7z</a>]  image created December 2022
 
 <p>Download, unzip and flash to a flash card that is at least 8gb.  You can use the <a href="https://www.raspberrypi.com/software/">Raspberry PI Imager</a> to install it on a suitable flash card.
