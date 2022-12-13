@@ -60,5 +60,5 @@ Note: This code assumes an Arduino Nano but can easily be modified for other Ard
   <li>Consider remote access to the Raspberry PI eg <a href="https://www.tomshardware.com/how-to/raspberry-pi-access-point">Wifi AP</a>
   <li>Consider how to easily update the Arduino code (eg install the Arduino IDE on the Raspberry PI)
   <li>Install apache2 and add a web homepage (eg <a href="index.html">index.html</a>)
-  <li>Configure "httpStatic: '/home/tower/.node-red/www'" in the NodeRed config file and visualise the bells being rung (eg <a href="nodered/index.html">nodered/index.html</a> and <a href="nodered/line.html">nodered/line.html</a>)
+  <li>Configure "httpStatic: '/home/tower/.node-red/www'" in the NodeRed config file and visualise the bells being rung (eg by adding the files <a href="nodered/index.html">nodered/index.html</a> and <a href="nodered/line.html">nodered/line.html</a> to the folder "/home/tower/.node-red/www")
 </list>
