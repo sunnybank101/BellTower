@@ -16,7 +16,11 @@ The Arduino monitors each Sense wire from the sensors via the Arduino pin it is 
 
 A simple NodeRed flow on the Raspberry PI is used to monitor the USB serial line comming from the Arduino - the Arduino outputs a sinlge character '1' to 'x' representing each bell sensor trigger.  The NodeRed flow uses the bell number to trigger the approviate audio wav file for that bell to be played.  The NodeRed flow also attempts to forward the same bell number ie '1' to 'x' to a second serial port so that optionally a computer/laptop can be used to run bell ringing software such as Virtual Belfry.
 
-<img src="nodered/noderedflow.png"  alt="nodered overview">
+<img src="nodered/noderedflow.png" alt="nodered overview">
+
+<h2>Raspberry PI Binary Image</h1>
+<p>If you have a Raspberry PI v3 B+ and at least an 8GB flash card then you can use the binary image provided to fast start your setup.  This image created in December 2022 contains the latest raspbian OS, latest fixes and everything discussed below.  You can use the <a href="https://www.raspberrypi.com/software/">Raspberry PI Imager</a> to install it on a suitable flash card
+<p>You will need the following id's and passwords with this image
 
 <h2>Raspberry PI Setup 1</h2>
 <p>Any version of a Raspberry PI is suitable for this purpose but one with a headphone socket is preferable
