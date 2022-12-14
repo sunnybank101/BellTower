@@ -5,6 +5,8 @@ Main simulator flow  [Bell Sensor -> Arduino -> RaspberryPI -> Speakers]
 <br>
 plus optionally [RaspberryPI -> PC] for serial output to a pc or laptop running additional bell ringing software
 
+<a href="photos">Photo Library</a> shows how this system has been installed in the Sherfield English tower in Hampshire UK.
+
 <img src="system.png"  alt="system overview">
 
 The sensors being used are cheap and readily available KY-032 IR obstacle sensors (others could be used with changes to the Arduino code).  The KY-032 sensor is particularly good because R5 and R6 in the image below allow you to alter sensitivity and distance of detection.<br>
