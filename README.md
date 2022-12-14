@@ -50,7 +50,7 @@ Note: This code assumes an Arduino Nano but can easily be modified for other Ard
 
 <h2>Raspberry PI Setup 2</h2>
 <list>
-  <li>Connect test sensors to the Arduino as per the pin definitions in "arduinoKY032.ino".  FYI sensors do seem to have different sensitivy so we have adjusted them to be ~2cm pickup of a reflective surface
+  <li>Connect test sensors to the Arduino as per the pin definitions in "arduinoKY032.ino".  FYI sensors do seem to have different sensitivy so we have adjusted them to be ~2cm pickup of a reflective surface to make tower installation easier
   <li>Plug the Arduino into the Raspberry PI
   <li>Follow the instructions <a href="https://www.freva.com/assign-fixed-usb-port-names-to-your-raspberry-pi/">here</a> to create symlinks to the Arduino serial port [ie no matter which USB the RPI is connected the arduino will always be addressable as /dev/ttyUSB_ARDUINO]
 </list>
