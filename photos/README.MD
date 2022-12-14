@@ -1,4 +1,4 @@
-<H1>Install Photo Library</H1>
+<H1>Photo Library</H1>
 
 <p>Sensor preparation
 <img src="sensorsprep.png" alt="desk testing">
