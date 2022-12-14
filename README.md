@@ -54,9 +54,9 @@ Note: This code assumes an Arduino Nano but can easily be modified for other Ard
   <li>Plug the Arduino into the Raspberry PI
   <li>Follow the instructions <a href="https://www.freva.com/assign-fixed-usb-port-names-to-your-raspberry-pi/">here</a> to create symlinks to the Arduino serial port [ie no matter which USB the RPI is connected the arduino will always be addressable as /dev/ttyUSB_ARDUINO]
 </list>
-
+<p>Desk test setup
 <img src="photos/desktest.png" alt="desk testing">
-
+<p>
 <h2>Tower Installation [TBD]</h2>
 <list>
   <li>The Raspberry PI and arduino are installed somewhere in the ringing chamber - out of the way but accessible - somewhere near a power switch to turn the whole lot on and off easily
