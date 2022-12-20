@@ -6,4 +6,10 @@
 <p>Desk test setup
 <img src="desktest.png" alt="desk testing">
 
+<p>Fitted sensors in the tower
+<img src="fittedsensors.jpg" alt="fitted sensors">
+
+<p>Cable install
+<img src="wiring on frame.jpg" alt="fitted sensors">
+
 <p>
