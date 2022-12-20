@@ -15,7 +15,7 @@
 
 <hr>
   
-<p>Cable install - cables are tied to the underside of the top of the I beams so that you can still stand on any of the beams in those tight spots without fear of pulling wires
+<p>Cables being installed - cables are tied to the underside of the top of the I beams so that you can still stand on any of the beams in those tight spots without fear of pulling wires.  The right hand side still needs tying in.
 <img src="wiring on frame.jpg" alt="fitted sensors">
 
 <hr>
