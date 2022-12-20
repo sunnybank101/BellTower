@@ -64,8 +64,8 @@ The <a href="photos">Photo Library</a> shows how this system has been installed 
 <list>
   <li>The Raspberry PI and arduino are installed somewhere in the ringing chamber - out of the way but accessible - somewhere near a power switch to turn the whole lot on and off easily
   <li>8 core and 4 core alarm cable is used to run from the Arduino to where the bells hang (this is cheap and available in good lengths).  eg run 2*8core cables up to a central spot then 4 core to each bell
-  <li>Attach each bell sensor to a convenient support aligned to each bell wheel. Ensure nothing is going to catch the sensor as the bell swings
-  <li>White duct tape can be used on the wheel to ensure good IR sensor reflectivity
+  <li>Attach each bell sensor to a convenient support aligned to each bell wheel. A short piece of wood helps with positioning and provides a secure cable tied base to install the sensor on.  Ensure nothing is going to catch the sensor as the bell swings
+  <li>White duct tape can be used on the wheel to ensure good IR sensor reflectivity.  Tape ~15cm long reduces signal bouce when the wheel isnt quite stationary
 </list>
 
 <h2>Fine Tuning [TBD]</h2>
