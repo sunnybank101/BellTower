@@ -68,7 +68,7 @@ The <a href="photos">Photo Library</a> shows how this system has been installed 
   <li>White duct tape can be used on the wheel to ensure good IR sensor reflectivity.  Tape ~15cm long reduces signal bouce when the wheel isnt quite stationary
 </list>
 
-<img src="photos/fitted sensors.jpg.png" alt="sensor install for 2 bells">
+<img src="photos/fitted sensors.jpg" alt="sensor install for 2 bells">
 
 <h2>Fine Tuning [TBD]</h2>
 <list>
