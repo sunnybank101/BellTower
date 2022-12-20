@@ -1,5 +1,5 @@
 
-<H1>RPI2 Binary Images</H1>
+<H1>RPI2B Binary Images</H1>
 
 <p>Binary flash images are too large to be stored in github so they are currently hosted <a href="https://drive.google.com/drive/folders/1uffMYFfXzFqwHFsLVVnfenaS6MA3xS1N?usp=share_link">in google drive</a>
 
