@@ -59,7 +59,7 @@ Note: This code assumes an Arduino Nano but can easily be modified for other Ard
 <p>Desk test setup
 <img src="photos/desktest.png" alt="desk testing">
 <p>
-<h2>Tower Installation [TBD]</h2>
+<h2>Tower Installation</h2>
 The <a href="photos">Photo Library</a> shows how this system has been installed in the Sherfield English tower in Hampshire UK.
 <list>
   <li>The Raspberry PI and arduino are installed somewhere in the ringing chamber - out of the way but accessible - somewhere near a power switch to turn the whole lot on and off easily
@@ -67,6 +67,8 @@ The <a href="photos">Photo Library</a> shows how this system has been installed 
   <li>Attach each bell sensor to a convenient support aligned to each bell wheel. A short piece of wood helps with positioning and provides a secure cable tied base to install the sensor on.  Ensure nothing is going to catch the sensor as the bell swings
   <li>White duct tape can be used on the wheel to ensure good IR sensor reflectivity.  Tape ~15cm long reduces signal bouce when the wheel isnt quite stationary
 </list>
+
+<img src="photos/fitted sensors.jpg.png" alt="sensor install for 2 bells">
 
 <h2>Fine Tuning [TBD]</h2>
 <list>
