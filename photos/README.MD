@@ -9,7 +9,7 @@
 <p>Fitted sensors in the tower
 <img src="fitted sensors.jpg" alt="fitted sensors">
 
-<p>Cable install
+<p>Cable install.  Cables are tied to the underside of the top of the I beam so you can still stand on the beams in all those tight spots without fear of pulling wires
 <img src="wiring on frame.jpg" alt="fitted sensors">
 
 <p>
