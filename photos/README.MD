@@ -10,7 +10,7 @@
 
 <hr>
   
-<p>Fitted sensors in the tower - this one point happens to be able to serve both bells which was fortunate.  You can also see the white reflective tape on the bell wheels.
+<p>Fitted sensors in the tower - this one point happens to be able to serve 2 bells which was very fortunate.  You can also see the white reflective tape on the bell wheels.
 <img src="fitted sensors.jpg" alt="fitted sensors">
 
 <hr>
