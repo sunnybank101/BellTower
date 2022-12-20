@@ -1,9 +1,12 @@
+// 
+//  https://github.com/sunnybank101/BellTower
+// 
 // ===================================================
 // BELL RINGING KY-032 IR SENSOR MONITOR
 // ===================================================
 
 // how many bells is this device running?  floating values will accidentally trigger bells
-// active bell pins must be attatched to KY-032 sensors or GND
+// active bell pins must be attatched to KY-032 sensors
 #define BELLCOUNT 1
 
 // handle electrical bounce - only process bell changes with more than 100ms separation
