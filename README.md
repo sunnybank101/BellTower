@@ -79,3 +79,10 @@ The <a href="photos">Photo Library</a> shows how this system has been installed 
   <li>Install apache2 and add a web homepage (eg <a href="index.html">index.html</a>)
   <li>Configure "httpStatic: '/home/tower/.node-red/www'" in the NodeRed config file and visualise the bells being rung (eg by adding the files <a href="nodered/index.html">nodered/index.html</a> and <a href="nodered/line.html">nodered/line.html</a> to the folder "/home/tower/.node-red/www")
 </list>
+
+<h2>Words of Wisdom</h2>
+<list>
+  <li>It turns out that bell wheels are definitely not all perfectly round or square!  Watch out for what this does to the sensor trigger/pickup.. we found in Sherfield English that this was a real act trying to get the sensor the right distance from the wheel and the sensor setting just right so that it only triggered once as the wheel turned in either direction
+  <li>In changing weather conditions we found that cable ties alone was not enough to hold the sensors perfectly in place. We decided to add small J bolts to each on the pieces of wood holding the sensors in order to clamp more securly to the steel Ibeams
+  <li>
+</list>
