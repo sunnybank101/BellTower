@@ -83,7 +83,7 @@ The <a href="photos">Photo Library</a> shows how this system has been installed 
 
 <h2>Words of Wisdom</h2>
 <list>
-  <li>It turns out that bell wheels are definitely not all perfectly round or square!  Watch out for what this does to the sensor trigger/pickup.. we found in Sherfield English that this was a real act trying to get the sensor the right distance from the wheel and the sensor setting just right so that it only triggered once as the wheel turned in either direction
+  <li>It turns out that bell wheels are definitely not all perfectly round or square!  Watch out for what this does to the sensor trigger/pickup.. we found in Sherfield English that this was a real game trying to get the sensor the right distance from the wheel and the sensor settings just right so that it only triggered once on the white tape as the wheel turned fully in either direction.  Some wheels were easy to get right but the bigger bells were tougher and may need ongoing tweeking.
   <li>In changing weather conditions we found that cable ties alone was not enough to hold the sensors perfectly in place. We decided to add 2 small M6 J bolts to each of the pieces of wood holding the sensors in order to clamp it more securly to the steel Ibeams.  The cable ties help get everything in about the right place to install the Jbolts then remain as a backup.
   <li>
 </list>
