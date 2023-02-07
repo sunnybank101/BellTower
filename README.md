@@ -72,7 +72,8 @@ The <a href="photos">Photo Library</a> shows how this system has been installed 
 
 <h2>Fine Tuning</h2>
 <list>
-  <li>Audio Delays - from sense to audio playing - see the NodeRed flow to introduce the appropriate delays per bell
+  <li>Audio Delays - from sense to audio playing - see the NodeRed flow to introduce the appropriate delays per bell.  Running the simulator without the bells silenced lets you fine tune the simulator audio to the real bells
+  <li>Bell Audio files - record your own bells!  A phone held out of a bell tower window seemed to do the trick and with a bit of online wav file hacking we've managed to create really good audio of the bells at Sherfield English
   <li>Add a USB serial adapter to the raspberry PI and using a second serial adapter connect the raspberry PI to a secondary laptop to run 3rd party ringing software eg <a href="https://www.belfryware.com/">Virtual Belfry</a>.  Note: when configured in the NodeRed flow the raspberry pi will output a single ascii character representing the bell number eg '1'.  This complies with the "Bagley Multi-Bell Interface" format <a href="https://www.abelsim.co.uk/doc/mbiconn.htm">described here</a>
   <li>Consider remote access to the Raspberry PI eg <a href="https://www.tomshardware.com/how-to/raspberry-pi-access-point">Wifi AP</a>
   <li>Consider how to easily update the Arduino code (eg install the Arduino IDE on the Raspberry PI)
@@ -83,6 +84,6 @@ The <a href="photos">Photo Library</a> shows how this system has been installed 
 <h2>Words of Wisdom</h2>
 <list>
   <li>It turns out that bell wheels are definitely not all perfectly round or square!  Watch out for what this does to the sensor trigger/pickup.. we found in Sherfield English that this was a real act trying to get the sensor the right distance from the wheel and the sensor setting just right so that it only triggered once as the wheel turned in either direction
-  <li>In changing weather conditions we found that cable ties alone was not enough to hold the sensors perfectly in place. We decided to add small J bolts to each on the pieces of wood holding the sensors in order to clamp more securly to the steel Ibeams
+  <li>In changing weather conditions we found that cable ties alone was not enough to hold the sensors perfectly in place. We decided to add 2 small M6 J bolts to each of the pieces of wood holding the sensors in order to clamp it more securly to the steel Ibeams.  The cable ties help get everything in about the right place to install the Jbolts then remain as a backup.
   <li>
 </list>
