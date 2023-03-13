@@ -39,7 +39,7 @@ A simple NodeRed flow on the Raspberry PI is used to monitor the USB serial line
   <li>Log into NodeRed and import [<a href="nodered/flow.json">nodered/flow.json</a>]
   <li>Allow any library dependencies to be installed automatically as required
   <li>Plug speakers into the arduino headphone socket
-  <li>Transfer your preferred bell sound files as "1.wav" etc to  /home/tower/.node-red/audio.. Check the nodered 'store' nodes to confirm that it correctly specifies the location of the audio files 
+  <li>Transfer your preferred bell sound files as "1.wav" "2.wav" etc to "/home/tower/.node-red/www/audio" then check the 'play-soundfile' node to confirm that it correctly specifies the location of the audio files
   <li>Use the Test flows to check that the audio files are played correctly
 </list>
 
