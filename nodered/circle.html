@@ -1,0 +1,189 @@
+<h1>Tower Ringing Visualiser</h1>
+
+<p align=center>
+
+<canvas id="ringingCanvas" width="820" height="820" style="border:1px solid #000000;">
+</canvas>
+
+<p align=center>Displaying bells as they are rung...
+
+<p align=center><a href="/">[Home]</a>, <a href="/circle.html">[Circle Diagram]</a>, <a href="/line.html">[Line Diagram]</a>
+
+<script>
+		// ====================================================================================
+		
+		
+		var c = document.getElementById("ringingCanvas");
+		var ctx = c.getContext("2d");
+		
+		
+		function drawBell( bell, state )
+			{
+			ctx.lineWidth = 5;
+			ctx.strokeStyle = '#003300';
+			ctx.fillStyle = 'black';
+			ctx.font = "30px Arial";
+			
+			//console.log( "bell:" + bell + " - " + state );
+			
+			switch( bell )
+				{
+				case 2:
+					{
+					// top 2
+					ctx.beginPath();
+					ctx.fillStyle = 'white';
+					ctx.arc(410, 60, 50, 0, 2 * Math.PI);
+					if( state == "ON" ) ctx.fillStyle = 'green'; else ctx.fillStyle = 'white';
+					ctx.fill();
+					ctx.stroke();
+					ctx.closePath();
+					ctx.fillStyle = 'black';
+					ctx.fillText("2", 400, 70);
+					break;
+					}
+				case 3:
+					{
+					// top right 3
+					ctx.beginPath();
+					ctx.fillStyle = 'white';
+					ctx.arc(660, 190, 50, 0, 2 * Math.PI);
+					if( state == "ON" ) ctx.fillStyle = 'green'; else ctx.fillStyle = 'white';
+					ctx.fill();
+					ctx.stroke();
+					ctx.closePath();
+					ctx.fillStyle = 'black';
+					ctx.fillText("3", 650, 200);
+					break;
+					}
+				case 4:
+					{
+					// right 4
+					ctx.beginPath();
+					ctx.fillStyle = 'white';
+					ctx.arc(760, 410, 50, 0, 2 * Math.PI);
+					if( state == "ON" ) ctx.fillStyle = 'green'; else ctx.fillStyle = 'white';
+					ctx.fill();
+					ctx.stroke();
+					ctx.closePath();
+					ctx.fillStyle = 'black';
+					ctx.fillText("4", 750, 420);
+					break;
+					}
+				case 5:
+					{
+					// bottom right 5
+					ctx.beginPath();
+					ctx.fillStyle = 'white';
+					ctx.arc(660, 630, 50, 0, 2 * Math.PI);
+					if( state == "ON" ) ctx.fillStyle = 'green'; else ctx.fillStyle = 'white';
+					ctx.fill();
+					ctx.stroke();
+					ctx.closePath();
+					ctx.fillStyle = 'black';
+					ctx.fillText("5", 650, 640);
+					break;
+					}
+				case 6:
+					{
+					// bottom 6
+					ctx.beginPath();
+					ctx.fillStyle = 'white';
+					ctx.arc(410, 760, 50, 0, 2 * Math.PI);
+					if( state == "ON" ) ctx.fillStyle = 'green'; else ctx.fillStyle = 'white';
+					ctx.fill();
+					ctx.stroke();
+					ctx.closePath();
+					ctx.fillStyle = 'black';
+					ctx.fillText("6", 400, 770);
+					break;
+					}
+				case 7:
+					{
+					// bottom left 7
+					ctx.beginPath();
+					ctx.fillStyle = 'white';
+					ctx.arc(160, 630, 50, 0, 2 * Math.PI);
+					if( state == "ON" ) ctx.fillStyle = 'green'; else ctx.fillStyle = 'white';
+					ctx.fill();
+					ctx.stroke();
+					ctx.closePath();
+					ctx.fillStyle = 'black';
+					ctx.fillText("7", 150, 640);
+					break;
+					}
+				case 8:
+					{
+					//left 8
+					ctx.beginPath();
+					ctx.fillStyle = 'white';
+					ctx.arc(60, 410, 50, 0, 2 * Math.PI);
+					if( state == "ON" ) ctx.fillStyle = 'green'; else ctx.fillStyle = 'white';
+					ctx.fill();
+					ctx.stroke();
+					ctx.closePath();
+					ctx.fillStyle = 'black';
+					ctx.fillText("8", 50, 420);
+					break;
+					}
+				case 1:
+					{
+					//top left 1
+					ctx.beginPath();
+					ctx.arc(160, 190, 50, 0, 2 * Math.PI);
+					if( state == "ON" ) ctx.fillStyle = 'green'; else ctx.fillStyle = 'white';
+					ctx.fill();
+					ctx.stroke();
+					ctx.closePath();
+					ctx.fillStyle = 'black';
+					ctx.fillText("1", 150, 200);
+					break;
+					}
+				}
+			}
+		
+		// draw the bells
+		drawBell(1, null);
+		drawBell(2, null);
+		drawBell(3, null);
+		drawBell(4, null);
+		drawBell(5, null);
+		drawBell(6, null);
+		drawBell(7, null);
+		drawBell(8, null);
+		
+		var connection = null;
+		
+		if( connection == null ) {
+			connection = new WebSocket('ws://' + document.location.host + '/ws/bell');
+			}
+		
+		// When the connection is open, send some data to the server
+		connection.onopen = function () {
+			//connection.send('Ping'); // Send the message 'Ping' to the server
+			};
+		
+		// When the connection is open, send some data to the server
+		connection.onclose = function () {
+			console.log('WebSocket Closed...');
+			};
+		
+		// Log errors
+		connection.onerror = function (error) {
+			console.log('WebSocket Error ' + error);
+			};
+		
+		// Log messages from the server
+		connection.onmessage = function (e) {
+				//console.log('ServerResponse: ' + e.data);
+				
+				var d = e.data.split(',');
+				
+				if( d[1] == "ON" )
+					drawBell( Number(d[0]), "ON" );
+				else
+					drawBell( Number(d[0]), "OFF" );
+				
+			};
+		
+</script>

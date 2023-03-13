@@ -1,166 +1,77 @@
-<h1>Tower Ringing Visualiser</h1>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
 
-<p align=center>
+input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 64px;
+  padding-left: 33px;
+  margin: 0;
+  border-radius: 16px;
+  background: radial-gradient(circle 12px, white 100%, transparent calc(100% + 1px)) #ccc -16px;
+  transition: 0.3s ease-in-out;
+}
 
-<canvas id="ringingCanvas" width="820" height="820" style="border:1px solid #000000;">
-</canvas>
+input::before {
+  content: "OFF";
+  font: bold 12px/32px Verdana;
+  color: white;
+  text-shadow: 0 1px black;
+}
 
-<p align=center>Displaying bells as they are rung...
+:checked {
+  padding-left: 8px;
+  background-color: dodgerBlue;
+  background-position: 16px;
+}
 
-<p align=center><a href="/line.html">Line Diagram</a>
+:checked::before {
+  content: "ON";
+}
+
+</style>
+</head>
+<body>
+
+<h1>Tower Ringing Simulator</h1>
+
+<p>Bells Enabled
+<ol>
+<li><input type="checkbox" id="bell1" onclick='bellonoff(this);' checked=true>
+<li><input type="checkbox" id="bell2" onclick='bellonoff(this);' checked=true>
+<li><input type="checkbox" id="bell3" onclick='bellonoff(this);' checked=true>
+<li><input type="checkbox" id="bell4" onclick='bellonoff(this);' checked=true>
+<li><input type="checkbox" id="bell5" onclick='bellonoff(this);' checked=true>
+<li><input type="checkbox" id="bell6" onclick='bellonoff(this);' checked=true>
+<li><input type="checkbox" id="bell7" onclick='bellonoff(this);' checked=true>
+<li><input type="checkbox" id="bell8" onclick='bellonoff(this);' checked=true>
+</ol>
+
+
+<p><a href="/">[Home]</a>, <a href="/circle.html">[Circle Diagram]</a>, <a href="/line.html">[Line Diagram]</a>
+
 
 <script>
-		// ====================================================================================
 		
-		
-		var c = document.getElementById("ringingCanvas");
-		var ctx = c.getContext("2d");
-		
-		
-		function drawBell( bell, state )
-			{
-			ctx.lineWidth = 5;
-			ctx.strokeStyle = '#003300';
-			ctx.fillStyle = 'black';
-			ctx.font = "30px Arial";
-			
-			//console.log( "bell:" + bell + " - " + state );
-			
-			switch( bell )
-				{
-				case 2:
-					{
-					// top 2
-					ctx.beginPath();
-					ctx.fillStyle = 'white';
-					ctx.arc(410, 60, 50, 0, 2 * Math.PI);
-					if( state == "ON" ) ctx.fillStyle = 'green'; else ctx.fillStyle = 'white';
-					ctx.fill();
-					ctx.stroke();
-					ctx.closePath();
-					ctx.fillStyle = 'black';
-					ctx.fillText("2", 400, 70);
-					break;
-					}
-				case 3:
-					{
-					// top right 3
-					ctx.beginPath();
-					ctx.fillStyle = 'white';
-					ctx.arc(660, 190, 50, 0, 2 * Math.PI);
-					if( state == "ON" ) ctx.fillStyle = 'green'; else ctx.fillStyle = 'white';
-					ctx.fill();
-					ctx.stroke();
-					ctx.closePath();
-					ctx.fillStyle = 'black';
-					ctx.fillText("3", 650, 200);
-					break;
-					}
-				case 4:
-					{
-					// right 4
-					ctx.beginPath();
-					ctx.fillStyle = 'white';
-					ctx.arc(760, 410, 50, 0, 2 * Math.PI);
-					if( state == "ON" ) ctx.fillStyle = 'green'; else ctx.fillStyle = 'white';
-					ctx.fill();
-					ctx.stroke();
-					ctx.closePath();
-					ctx.fillStyle = 'black';
-					ctx.fillText("4", 750, 420);
-					break;
-					}
-				case 5:
-					{
-					// bottom right 5
-					ctx.beginPath();
-					ctx.fillStyle = 'white';
-					ctx.arc(660, 630, 50, 0, 2 * Math.PI);
-					if( state == "ON" ) ctx.fillStyle = 'green'; else ctx.fillStyle = 'white';
-					ctx.fill();
-					ctx.stroke();
-					ctx.closePath();
-					ctx.fillStyle = 'black';
-					ctx.fillText("5", 650, 640);
-					break;
-					}
-				case 6:
-					{
-					// bottom 6
-					ctx.beginPath();
-					ctx.fillStyle = 'white';
-					ctx.arc(410, 760, 50, 0, 2 * Math.PI);
-					if( state == "ON" ) ctx.fillStyle = 'green'; else ctx.fillStyle = 'white';
-					ctx.fill();
-					ctx.stroke();
-					ctx.closePath();
-					ctx.fillStyle = 'black';
-					ctx.fillText("6", 400, 770);
-					break;
-					}
-				case 7:
-					{
-					// bottom left 7
-					ctx.beginPath();
-					ctx.fillStyle = 'white';
-					ctx.arc(160, 630, 50, 0, 2 * Math.PI);
-					if( state == "ON" ) ctx.fillStyle = 'green'; else ctx.fillStyle = 'white';
-					ctx.fill();
-					ctx.stroke();
-					ctx.closePath();
-					ctx.fillStyle = 'black';
-					ctx.fillText("7", 150, 640);
-					break;
-					}
-				case 8:
-					{
-					//left 8
-					ctx.beginPath();
-					ctx.fillStyle = 'white';
-					ctx.arc(60, 410, 50, 0, 2 * Math.PI);
-					if( state == "ON" ) ctx.fillStyle = 'green'; else ctx.fillStyle = 'white';
-					ctx.fill();
-					ctx.stroke();
-					ctx.closePath();
-					ctx.fillStyle = 'black';
-					ctx.fillText("8", 50, 420);
-					break;
-					}
-				case 1:
-					{
-					//top left 1
-					ctx.beginPath();
-					ctx.arc(160, 190, 50, 0, 2 * Math.PI);
-					if( state == "ON" ) ctx.fillStyle = 'green'; else ctx.fillStyle = 'white';
-					ctx.fill();
-					ctx.stroke();
-					ctx.closePath();
-					ctx.fillStyle = 'black';
-					ctx.fillText("1", 150, 200);
-					break;
-					}
-				}
-			}
-		
-		// draw the bells
-		drawBell(1, null);
-		drawBell(2, null);
-		drawBell(3, null);
-		drawBell(4, null);
-		drawBell(5, null);
-		drawBell(6, null);
-		drawBell(7, null);
-		drawBell(8, null);
-		
+		// send a ws request to turn the bell on off inline with the checkbox`
+		function bellonoff(cb) {
+		  console.log(cb.id + " = " + cb.checked);
+		  connection.send('{"cmd":"bellonoff", "bell":"' + cb.id + '", "value":' + cb.checked + '}');
+		}
+
+		// ========= CONNECTION HANDLING =============
+
 		var connection = null;
 		
 		if( connection == null ) {
-			connection = new WebSocket('ws://' + document.location.host + '/ws/bell');
+			connection = new WebSocket('ws://' + document.location.host + '/ws/settings');
 			}
 		
 		// When the connection is open, send some data to the server
 		connection.onopen = function () {
-			//connection.send('Ping'); // Send the message 'Ping' to the server
+			connection.send('{"cmd":"get"}'); // Send the message 'Ping' to the server
 			};
 		
 		// When the connection is open, send some data to the server
@@ -175,15 +86,25 @@
 		
 		// Log messages from the server
 		connection.onmessage = function (e) {
-				//console.log('ServerResponse: ' + e.data);
+				const d = JSON.parse( e.data );
 				
-				var d = e.data.split(',');
+				console.log(d );
 				
+				if(d.bellenabled[0] == 0) document.getElementById("bell1").checked = false; else document.getElementById("bell1").checked = true; 
+				if(d.bellenabled[1] == 0) document.getElementById("bell2").checked = false; else document.getElementById("bell2").checked = true; 
+				if(d.bellenabled[2] == 0) document.getElementById("bell3").checked = false; else document.getElementById("bell3").checked = true; 
+				if(d.bellenabled[3] == 0) document.getElementById("bell4").checked = false; else document.getElementById("bell4").checked = true; 
+				if(d.bellenabled[4] == 0) document.getElementById("bell5").checked = false; else document.getElementById("bell5").checked = true; 
+				if(d.bellenabled[5] == 0) document.getElementById("bell6").checked = false; else document.getElementById("bell6").checked = true; 
+				if(d.bellenabled[6] == 0) document.getElementById("bell7").checked = false; else document.getElementById("bell7").checked = true; 
+				if(d.bellenabled[7] == 0) document.getElementById("bell8").checked = false; else document.getElementById("bell8").checked = true; 
+				
+				/*
 				if( d[1] == "ON" )
 					drawBell( Number(d[0]), "ON" );
 				else
 					drawBell( Number(d[0]), "OFF" );
-				
+				*/
 			};
 		
 </script>
