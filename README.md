@@ -4,7 +4,7 @@ A simple bell tower simulator setup - for installation into a tower of church be
 Main simulator flow  [Bell Sensor -> Arduino -> RaspberryPI -> Speakers]
 <br>
 plus optionally [RaspberryPI -> PC] for serial output to a pc or laptop running additional bell ringing software
-<br>
+
 Bells can also be silenced using the simulator webpage to turn off bells that you want to ignore
 
 <a href="photos">Photo Library</a> shows how this system has been installed in the Sherfield English tower in Hampshire UK.
