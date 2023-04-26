@@ -48,6 +48,10 @@ input::before {
 <li><input type="checkbox" id="bell7" onclick='bellonoff(this);' checked=true>
 <li><input type="checkbox" id="bell8" onclick='bellonoff(this);' checked=true>
 </ol>
+<p>Reset all bells to handstroke
+<button type="button" id="handstrokereset" onclick="handstrokereset()">Reset to handstroke</button>
+<script>
+
 
 
 <p><a href="/">[Home]</a>, <a href="/circle.html">[Circle Diagram]</a>, <a href="/line.html">[Line Diagram]</a>
@@ -60,6 +64,13 @@ input::before {
 		  console.log(cb.id + " = " + cb.checked);
 		  connection.send('{"cmd":"bellonoff", "bell":"' + cb.id + '", "value":' + cb.checked + '}');
 		}
+
+                // send a ws request to reset all the bells to handstroke
+                function handstrokereset() {
+                  console.log("Reset to handstroke");
+                  connection.send('{"cmd":"handstrokereset"}');
+                }
+
 
 		// ========= CONNECTION HANDLING =============
 
