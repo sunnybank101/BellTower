@@ -7,6 +7,8 @@ plus optionally [RaspberryPI -> PC] for serial output to a pc or laptop running 
 
 Bells can also be silenced using the simulator webpage to turn off bells that you want to ignore
 
+Default bell sounding delays can be configured within the nodered flow for handstroke and backstroke. A reset to handstroke button is on the simulator webpage 
+
 <a href="photos">Photo Library</a> shows how this system has been installed in the Sherfield English tower in Hampshire UK.
 
 <img src="system.png"  alt="system overview">
