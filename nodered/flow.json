@@ -106,7 +106,8 @@
             "7c431da05453ecc5",
             "fbda246ee7bbad9d",
             "d788728f205d29ca",
-            "43bde1c6d98c64bd"
+            "43bde1c6d98c64bd",
+            "3e53fcf6bf0c9d77"
         ],
         "x": 34,
         "y": 439,
@@ -456,7 +457,7 @@
         "z": "1d0942998054b875",
         "g": "89db9095cc341d5d",
         "name": "process",
-        "func": "\n// load the bell config\nmsg.bellconfig = context.global.get(\"BELLS\");\n\n// load the bell settings\nmsg.bellsettings = context.global.get(\"BELLsettings\");\n\n// which bell has been rung?\nmsg.bell = msg.payload[0] - 0x30;\n\n// is it a valid bell ie 1 to 8?\nif ((msg.bell >= 1) && (msg.bell <= 8) && (msg.bellsettings.bellenabled[msg.bell-1]==1))\n    {\n    // check bell ringing gap settings\n    msg.ringgap = Date.now() - msg.bellsettings.previousringms[msg.bell - 1];\n    msg.bellsettings.previousringms[msg.bell - 1] = Date.now();\n    msg.bRing = true;\n    \n    // are we removing rapid bell triggers?\n    if( msg.bellsettings.removerapid )\n        {\n        // is the gap between triggers big enough\n        if (msg.ringgap < msg.bellsettings.rapidms)\n            {\n            // dont ring the bell - triggers are too quick\n            msg.bRing = false;\n            }\n        }\n    \n    // should we ring the bell ?\n    if (msg.bRing)\n        {\n        var msgPC = {};\n\n        // should we re-map this bell because bigger bells are dissabled?\n        msg.bellsDissabled = 0;\n        for (let b = msg.bell-1; b < 8; b++)\n            {\n            // \n            if (msg.bellsettings.bellenabled[b]==0 )\n                {\n                msg.bellsDissabled++;\n                }\n            }\n        msg.bell = msg.bell + msg.bellsDissabled;\n        \n        // setup the audio params for a bell to ring\n        msg.file = msg.bellconfig[ msg.bell - 1 ].file;\n        msg.delay = msg.bellconfig[ msg.bell - 1 ].delay;\n        msg.payload = \"\" + (msg.bell - 1);\n\n        // setup the PC msg\n        //msgPC.payload = [ 0x30 + msg.bell - 1 ];\n        msgPC.payload = msg.bell;\n        \n        // done\n        return [msgPC, msg];\n        }\n    }\n\nreturn [null, null];",
+        "func": "\n// load the bell config\nmsg.bellconfig = context.global.get(\"BELLS\");\n\n// load the bell settings\nmsg.bellsettings = context.global.get(\"BELLsettings\");\n\n// which bell has been rung?\nmsg.bell = msg.payload[0] - 0x30;\n\n// is it a valid bell ie 1 to 8?\nif ((msg.bell >= 1) && (msg.bell <= 8) && (msg.bellsettings.bellenabled[msg.bell-1]==1))\n    {\n    // check bell ringing gap settings\n    msg.ringgap = Date.now() - msg.bellsettings.previousringms[msg.bell - 1];\n    msg.bellsettings.previousringms[msg.bell - 1] = Date.now();\n    msg.bRing = true;\n    \n    // are we removing rapid bell triggers?\n    if( msg.bellsettings.removerapid )\n        {\n        // is the gap between triggers big enough\n        if (msg.ringgap < msg.bellsettings.rapidms)\n            {\n            // dont ring the bell - triggers are too quick\n            msg.bRing = false;\n            }\n        }\n    \n    // should we ring the bell ?\n    if (msg.bRing)\n        {\n        var msgPC = {};\n\n        var handstroke = msg.bellsettings.ishandstroke[msg.bell - 1];\n        // flip handstroke to backstroke and back\n        msg.bellsettings.ishandstroke[msg.bell - 1] = 1 - handstroke\n        msg.delay = msg.bellconfig[msg.bell - 1].delay[handstroke];\n\n        // should we re-map this bell because bigger bells are dissabled?\n        msg.bellsDissabled = 0;\n        for (let b = msg.bell-1; b < 8; b++)\n            {\n            // \n            if (msg.bellsettings.bellenabled[b]==0 )\n                {\n                msg.bellsDissabled++;\n                }\n            }\n        msg.bell = msg.bell + msg.bellsDissabled;\n        \n        // setup the audio params for a bell to ring\n        msg.file = msg.bellconfig[ msg.bell - 1 ].file;\n        msg.payload = \"\" + (msg.bell - 1);\n\n        // setup the PC msg\n        //msgPC.payload = [ 0x30 + msg.bell - 1 ];\n        msgPC.payload = msg.bell;\n        \n        // done\n        return [msgPC, msg];\n        }\n    }\n\nreturn [null, null];",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -466,7 +467,6 @@
         "y": 520,
         "wires": [
             [
-                "3e53fcf6bf0c9d77",
                 "d788728f205d29ca"
             ],
             [
@@ -632,7 +632,8 @@
         "wires": [
             [
                 "a2fbacb8e18dcde6",
-                "9c16bb97988b9738"
+                "9c16bb97988b9738",
+                "3e53fcf6bf0c9d77"
             ]
         ]
     },
@@ -812,7 +813,7 @@
         "z": "1d0942998054b875",
         "g": "a96e4febf598ecf0",
         "name": "DEFAULT CONFIG",
-        "func": "\n// bell config setup -----------------\nmsg.bellconfig = context.global.get(\"BELLS\");\n\nvar reset = false;\nif (msg.bellconfig == undefined)     reset = true;\nif (!Array.isArray(msg.bellconfig))  reset = true;\n\nif (reset)\n    {\n    // there is NO config file!!\n    \n    // set the defaults\n    var bells = [   { file: \"1.wav\", delay: 300 },\n                    { file: \"2.wav\", delay: 300 },\n                    { file: \"3.wav\", delay: 300 },\n                    { file: \"4.wav\", delay: 325 },\n                    { file: \"5.wav\", delay: 325 },\n                    { file: \"6.wav\", delay: 325 },\n                    { file: \"7.wav\", delay: 325 },\n                    { file: \"8.wav\", delay: 350 }\n                ];\n\n    // store this setup in the global context\n    context.global.set(\"BELLS\", bells);\n    }\n\n// pass it on...\n//msg.payload = context.global.get(\"BELLS\");\nmsg.payload = JSON.stringify(context.global.get(\"BELLS\"), null, 4);\n\n\n// INTERNALS -----------------\n\n// set the internal settings\nvar bsettings = {\n    removerapid: true,\n    rapidms: 600,\n    previousringms: [0, 0, 0, 0, 0, 0, 0, 0],\n    bellenabled: [1, 1, 1, 1, 1, 1, 1, 1]\n    };\n\n// store these settings in the global context\ncontext.global.set(\"BELLsettings\", bsettings);\n\n// -----------------\n\n//done\nreturn msg;\n",
+        "func": "\n// bell config setup -----------------\nmsg.bellconfig = context.global.get(\"BELLS\");\n\nvar reset = false;\nif (msg.bellconfig == undefined)     reset = true;\nif (!Array.isArray(msg.bellconfig))  reset = true;\n\nif (reset)\n    {\n    // there is NO config file!!\n    \n    // set the defaults\n    // first entry of delay is the backstroke delay\n    var bells = [   { file: \"1.wav\", delay: [500, 300] },\n                    { file: \"2.wav\", delay: [300, 300] },\n                    { file: \"3.wav\", delay: [300, 300] },\n                    { file: \"4.wav\", delay: [325, 325] },\n                    { file: \"5.wav\", delay: [325, 325] },\n                    { file: \"6.wav\", delay: [325, 325] },\n                    { file: \"7.wav\", delay: [325, 325] },\n                    { file: \"8.wav\", delay: [350, 350] }\n                ];\n\n    // store this setup in the global context\n    context.global.set(\"BELLS\", bells);\n    }\n\n// pass it on...\n//msg.payload = context.global.get(\"BELLS\");\nmsg.payload = JSON.stringify(context.global.get(\"BELLS\"), null, 4);\n\n\n// INTERNALS -----------------\n\n// set the internal settings\nvar bsettings = {\n    removerapid: true,\n    rapidms: 600,\n    previousringms: [0, 0, 0, 0, 0, 0, 0, 0],\n    ishandstroke: [1, 1, 1, 1, 1, 1, 1, 1],\n    bellenabled: [1, 1, 1, 1, 1, 1, 1, 1]\n    };\n\n// store these settings in the global context\ncontext.global.set(\"BELLsettings\", bsettings);\n\n// -----------------\n\n//done\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1511,7 +1512,7 @@
         "z": "1d0942998054b875",
         "g": "a96e4febf598ecf0",
         "name": "settings",
-        "func": "\n// parse the request\nvar cmdReq = JSON.parse( msg.payload );\n\n// are we trying to turn a bell on/off ?\nif( cmdReq.cmd == \"bellonoff\")\n    {\n    // load the bell settings\n    msg.bellsettings = context.global.get(\"BELLsettings\");\n\n    // set the right bell..\n    msg.bell = Number(cmdReq.bell.slice(-1));\n    if (cmdReq.value == true) msg.value = 1; else msg.value = 0; \n    msg.bellsettings.bellenabled[msg.bell-1] = msg.value;\n    \n    // store these settings in the global context\n    context.global.set(\"BELLsettings\", msg.bellsettings);\n    }\n\n// the response is always a complete settings object\nmsg.payload = JSON.stringify(context.global.get(\"BELLsettings\") );\n\nreturn msg;",
+        "func": "\n// parse the request\nvar cmdReq = JSON.parse( msg.payload );\n\n// are we trying to turn a bell on/off ?\nif( cmdReq.cmd == \"bellonoff\")\n    {\n    // load the bell settings\n    msg.bellsettings = context.global.get(\"BELLsettings\");\n\n    // set the right bell..\n    msg.bell = Number(cmdReq.bell.slice(-1));\n    if (cmdReq.value == true) msg.value = 1; else msg.value = 0; \n    msg.bellsettings.bellenabled[msg.bell-1] = msg.value;\n    \n    // store these settings in the global context\n    context.global.set(\"BELLsettings\", msg.bellsettings);\n    }\n\nif( cmdReq.cmd == \"handstrokereset\" )\n    {\n    // load the bell settings\n    msg.bellsettings = context.global.get(\"BELLsettings\");\n\n    // set the right bell..\n    msg.bellsettings.ishandstroke = [1, 1, 1, 1, 1, 1, 1, 1]\n\n    // store these settings in the global context\n    context.global.set(\"BELLsettings\", msg.bellsettings);\n    }\n\n// the response is always a complete settings object\nmsg.payload = JSON.stringify(context.global.get(\"BELLsettings\") );\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
