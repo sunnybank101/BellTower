@@ -31,46 +31,133 @@ input::before {
   content: "ON";
 }
 
+#status {
+	font-size: 0.9rem;
+	margin-bottom: 1rem;
+}
+
+.open {
+	color: green;
+}
+
+.closed {
+	color: red;
+}
+
 </style>
 </head>
 <body>
 
 <h1>Tower Ringing Simulator</h1>
 
-<p>Bell Enable/Dissable
-<ol>
-<li><input type="checkbox" id="bell1" onclick='bellonoff(this);' checked=true>
-<li><input type="checkbox" id="bell2" onclick='bellonoff(this);' checked=true>
-<li><input type="checkbox" id="bell3" onclick='bellonoff(this);' checked=true>
-<li><input type="checkbox" id="bell4" onclick='bellonoff(this);' checked=true>
-<li><input type="checkbox" id="bell5" onclick='bellonoff(this);' checked=true>
-<li><input type="checkbox" id="bell6" onclick='bellonoff(this);' checked=true>
-<li><input type="checkbox" id="bell7" onclick='bellonoff(this);' checked=true>
-<li><input type="checkbox" id="bell8" onclick='bellonoff(this);' checked=true>
-</ol>
-<p>Reset all bells to handstroke
-<button type="button" id="handstrokereset" onclick='handstrokereset();'>Reset to handstroke</button>
+<div id="status" class="closed">Conecting...</div>
+
+<form id="inputstatus" hidden>
+	
+	<p>Bell Enable/Dissable
+	<ol>
+	<li><input type="checkbox" id="bell1" onclick='bellonoff(this);' checked=true>
+	<li><input type="checkbox" id="bell2" onclick='bellonoff(this);' checked=true>
+	<li><input type="checkbox" id="bell3" onclick='bellonoff(this);' checked=true>
+	<li><input type="checkbox" id="bell4" onclick='bellonoff(this);' checked=true>
+	<li><input type="checkbox" id="bell5" onclick='bellonoff(this);' checked=true>
+	<li><input type="checkbox" id="bell6" onclick='bellonoff(this);' checked=true>
+	<li><input type="checkbox" id="bell7" onclick='bellonoff(this);' checked=true>
+	<li><input type="checkbox" id="bell8" onclick='bellonoff(this);' checked=true>
+	</ol>
+
+	<p>Reset all bells to handstroke
+	<button type="button" id="handstrokereset" onclick='handstrokereset();'>Reset to handstroke</button>
+
+</form>
 
 <p><a href="/">[Home]</a>, <a href="/circle.html">[Circle Diagram]</a>, <a href="/line.html">[Line Diagram]</a>
 
 
 <script>
 		
+		var socketStatus = document.getElementById('status');
+		var inputStatus = document.getElementById('inputstatus');
+		
 		// send a ws request to turn the bell on off inline with the checkbox`
 		function bellonoff(cb) {
 		  console.log(cb.id + " = " + cb.checked);
-		  connection.send('{"cmd":"bellonoff", "bell":"' + cb.id + '", "value":' + cb.checked + '}');
+		  ws.send('{"cmd":"bellonoff", "bell":"' + cb.id + '", "value":' + cb.checked + '}');
 		}
-
-                // send a ws request to reset all the bells to handstroke
-                function handstrokereset() {
-                  console.log("Reset to handstroke");
-                  connection.send('{"cmd":"handstrokereset"}');
-                }
-
-
+		
+		// send a ws request to reset all the bells to handstroke
+		function handstrokereset() {
+		  console.log("Reset to handstroke");
+		  ws.send('{"cmd":"handstrokereset"}');
+		}
+		
+		
 		// ========= CONNECTION HANDLING =============
+		
+		
+		//wsURL - the string URL of the websocket
+		//waitTimer - the incrementing clock to use if no connection made
+		//waitSeed - used to reset the waitTimer back to default on a successful connection
+		//multiplier - how quickly you want the timer to grow on each unsuccessful connection attempt
+		
+		var ws = null;
+		
+		const openSocket = (wsURL, waitTimer, waitSeed, multiplier) => {
+			
+			ws = new WebSocket(wsURL);
+			console.log(`trying to connect to: ${ws.url}`);
+			
+			ws.onopen = () => {
+			
+				console.log(`connection open to: ${ws.url}`);
+				
+			  	socketStatus.innerHTML = 'Connected';
+				socketStatus.className = 'open';
+				inputStatus.hidden = false;
+				
+				waitTimer = waitSeed; //reset the waitTimer if the connection is made
+				
+				ws.onclose = () => {
+					console.log(`connection closed to: ${ws.url}`);					
+					socketStatus.innerHTML = 'Connecting..';
+					socketStatus.className = 'closed';
+					inputStatus.hidden = true;
+					openSocket(ws.url, waitTimer, waitSeed, multiplier);
+					};
+				
+				ws.onmessage = (message) => {
+					
+					const d = JSON.parse( message.data );
+					
+					console.log( d );
+					
+					if(d.bellenabled[0] == 0) document.getElementById("bell1").checked = false; else document.getElementById("bell1").checked = true; 
+					if(d.bellenabled[1] == 0) document.getElementById("bell2").checked = false; else document.getElementById("bell2").checked = true; 
+					if(d.bellenabled[2] == 0) document.getElementById("bell3").checked = false; else document.getElementById("bell3").checked = true; 
+					if(d.bellenabled[3] == 0) document.getElementById("bell4").checked = false; else document.getElementById("bell4").checked = true; 
+					if(d.bellenabled[4] == 0) document.getElementById("bell5").checked = false; else document.getElementById("bell5").checked = true; 
+					if(d.bellenabled[5] == 0) document.getElementById("bell6").checked = false; else document.getElementById("bell6").checked = true; 
+					if(d.bellenabled[6] == 0) document.getElementById("bell7").checked = false; else document.getElementById("bell7").checked = true; 
+					if(d.bellenabled[7] == 0) document.getElementById("bell8").checked = false; else document.getElementById("bell8").checked = true; 
+				  };
+			  
+				// Send the message 'Ping' to the server each time we open socket
+				ws.send('{"cmd":"get"}');
+			  
+			};
+		  
+			ws.onerror = () => {
+				//increaese the wait timer if not connected, but stop at a max of 2n-1 the check time
+				if(waitTimer < 60000) waitTimer = waitTimer * multiplier; 
+				console.log(`error opening connection ${ws.url}, next attemp in : ${waitTimer/1000} seconds`);
+				setTimeout(()=>{openSocket(ws.url, waitTimer, waitSeed, multiplier)}, waitTimer);
+			};
+		};
 
+		openSocket('ws://' + document.location.host + '/ws/settings', 1000, 1000, 2)
+
+
+/*
 		var connection = null;
 		
 		if( connection == null ) {
@@ -85,6 +172,7 @@ input::before {
 		// When the connection is open, send some data to the server
 		connection.onclose = function () {
 			console.log('WebSocket Closed...');
+			setTimeout(function() { connect(); }, 1000);
 			};
 		
 		// Log errors
@@ -106,13 +194,7 @@ input::before {
 				if(d.bellenabled[5] == 0) document.getElementById("bell6").checked = false; else document.getElementById("bell6").checked = true; 
 				if(d.bellenabled[6] == 0) document.getElementById("bell7").checked = false; else document.getElementById("bell7").checked = true; 
 				if(d.bellenabled[7] == 0) document.getElementById("bell8").checked = false; else document.getElementById("bell8").checked = true; 
-				
-				/*
-				if( d[1] == "ON" )
-					drawBell( Number(d[0]), "ON" );
-				else
-					drawBell( Number(d[0]), "OFF" );
-				*/
 			};
+*/		
 		
 </script>
