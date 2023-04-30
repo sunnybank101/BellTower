@@ -141,7 +141,8 @@
             "58b2474e75b04178",
             "7db5f87f8bebe913",
             "e8786e257384b31f",
-            "b3d2684cbee6df77"
+            "b3d2684cbee6df77",
+            "65c7edc8544084be"
         ],
         "x": 34,
         "y": 79,
@@ -554,7 +555,7 @@
         "z": "8d90a5ae55857ec5",
         "g": "52128944b93b0aaa",
         "name": "debug",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -737,7 +738,7 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 520,
+        "x": 580,
         "y": 160,
         "wires": [
             [
@@ -751,7 +752,7 @@
         "z": "8d90a5ae55857ec5",
         "g": "52128944b93b0aaa",
         "name": "debug",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -842,7 +843,7 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 520,
+        "x": 580,
         "y": 200,
         "wires": [
             [
@@ -1528,7 +1529,7 @@
             [
                 "7db5f87f8bebe913",
                 "e8786e257384b31f",
-                "49c715217f107fa7"
+                "65c7edc8544084be"
             ]
         ]
     },
@@ -1630,6 +1631,26 @@
         "wires": [
             [
                 "58b2474e75b04178"
+            ]
+        ]
+    },
+    {
+        "id": "65c7edc8544084be",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "store updates",
+        "func": "\nmsg.payload = JSON.stringify(context.global.get(\"BELLS\"), null, 4);\n\nmsg.filename = context.global.get(\"CONFIGFILENAME\");\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 260,
+        "wires": [
+            [
+                "255b9f849bdfc9e0"
             ]
         ]
     },
