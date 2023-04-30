@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
-input {
+.checkbox {
   -webkit-appearance: none;
   appearance: none;
   width: 64px;
@@ -14,7 +14,7 @@ input {
   transition: 0.3s ease-in-out;
 }
 
-input::before {
+.checkbox::before {
   content: "OFF";
   font: bold 12px/32px Verdana;
   color: white;
@@ -46,6 +46,13 @@ input::before {
 
 .button1 {background-color: dodgerBlue;} /* Blue */
 
+.button2 {background-color: Red;} /* Red */
+
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+
 
 </style>
 </head>
@@ -58,21 +65,43 @@ input::before {
 
 <form id="inputstatus" hidden>
 	
-	<p>Bell Enable/Dissable
+	<hr class="rounded">
+	<h3>Bell Enable/Dissable</h3>
 	<ol>
-	<li><input type="checkbox" id="bell1" onclick='bellonoff(this);' checked=true>
-	<li><input type="checkbox" id="bell2" onclick='bellonoff(this);' checked=true>
-	<li><input type="checkbox" id="bell3" onclick='bellonoff(this);' checked=true>
-	<li><input type="checkbox" id="bell4" onclick='bellonoff(this);' checked=true>
-	<li><input type="checkbox" id="bell5" onclick='bellonoff(this);' checked=true>
-	<li><input type="checkbox" id="bell6" onclick='bellonoff(this);' checked=true>
-	<li><input type="checkbox" id="bell7" onclick='bellonoff(this);' checked=true>
-	<li><input type="checkbox" id="bell8" onclick='bellonoff(this);' checked=true>
+	<li><input class="checkbox" type="checkbox" id="bell1" onclick='bellonoff(this);' checked=true>
+	<li><input class="checkbox" type="checkbox" id="bell2" onclick='bellonoff(this);' checked=true>
+	<li><input class="checkbox" type="checkbox" id="bell3" onclick='bellonoff(this);' checked=true>
+	<li><input class="checkbox" type="checkbox" id="bell4" onclick='bellonoff(this);' checked=true>
+	<li><input class="checkbox" type="checkbox" id="bell5" onclick='bellonoff(this);' checked=true>
+	<li><input class="checkbox" type="checkbox" id="bell6" onclick='bellonoff(this);' checked=true>
+	<li><input class="checkbox" type="checkbox" id="bell7" onclick='bellonoff(this);' checked=true>
+	<li><input class="checkbox" type="checkbox" id="bell8" onclick='bellonoff(this);' checked=true>
 	</ol>
 
-	<p>Reset all bells to handstroke
-	<button class="button1" type="button" onclick='handstrokereset(this);'>Reset to handstroke</button>
+	<hr class="rounded">
+	<h3>Bell Handstroke / Backstroke</h3>
+	<p>If bells are out of sink with their delays..
+	<p><button class="button1" id="resetstroke" type="button" onclick='handstrokereset();'>Reset to handstroke</button>
 	
+	<hr class="rounded">
+	<h3>Bell Delays</h3>
+	
+	Dont update these unless you are sure!
+	
+	<ol>
+	<li><input type="number" id="B1H" value="0" style="width: 4em"> <input type="number" id="B1B" value="0" style="width: 4em">
+	<li><input type="number" id="B2H" value="0" style="width: 4em"> <input type="number" id="B2B" value="0" style="width: 4em">
+	<li><input type="number" id="B3H" value="0" style="width: 4em"> <input type="number" id="B3B" value="0" style="width: 4em">
+	<li><input type="number" id="B4H" value="0" style="width: 4em"> <input type="number" id="B4B" value="0" style="width: 4em">
+	<li><input type="number" id="B5H" value="0" style="width: 4em"> <input type="number" id="B5B" value="0" style="width: 4em">
+	<li><input type="number" id="B6H" value="0" style="width: 4em"> <input type="number" id="B6B" value="0" style="width: 4em">
+	<li><input type="number" id="B7H" value="0" style="width: 4em"> <input type="number" id="B7B" value="0" style="width: 4em">
+	<li><input type="number" id="B8H" value="0" style="width: 4em"> <input type="number" id="B8B" value="0" style="width: 4em">
+	</ol>
+	
+	<button class="button1" id="updatedelays" type="button" onclick='delayupdate();'>Update Delays</button>
+	
+	<hr class="rounded">
 </form>
 
 <p><a href="/">[Home]</a>, <a href="/circle.html">[Circle Diagram]</a>, <a href="/line.html">[Line Diagram]</a>
@@ -82,7 +111,9 @@ input::before {
 		
 		var socketStatus = document.getElementById('status');
 		var inputStatus = document.getElementById('inputstatus');
-				
+		var resethandstrokeStatus = document.getElementById('resetstroke');
+		var updatedelaysStatus = document.getElementById('updatedelays');
+			
 		// send a ws request to turn the bell on off inline with the checkbox`
 		function bellonoff(cb) {
 			console.log(cb.id + " = " + cb.checked);
@@ -90,10 +121,39 @@ input::before {
 			};
 		
 		// send a ws request to reset all the bells to handstroke
-		function handstrokereset(a) {
+		function handstrokereset() {
 			console.log("Reset to handstroke");
+			resethandstrokeStatus.className = 'button2';
 			ws.send('{"cmd":"handstrokereset"}');
 			};
+		
+		// send a ws request to update the bell delays
+		function delayupdate() {
+			console.log("Bell delay update");
+			updatedelaysStatus.className = 'button2';
+			
+			// get the delay fields
+			var data="";
+			data += document.getElementById("B1H").value + ",";
+			data += document.getElementById("B1B").value + ",";
+			data += document.getElementById("B2H").value + ",";
+			data += document.getElementById("B2B").value + ",";
+			data += document.getElementById("B3H").value + ",";
+			data += document.getElementById("B3B").value + ",";
+			data += document.getElementById("B4H").value + ",";
+			data += document.getElementById("B4B").value + ",";
+			data += document.getElementById("B5H").value + ",";
+			data += document.getElementById("B5B").value + ",";
+			data += document.getElementById("B6H").value + ",";
+			data += document.getElementById("B6B").value + ",";
+			data += document.getElementById("B7H").value + ",";
+			data += document.getElementById("B7B").value + ",";
+			data += document.getElementById("B8H").value + ",";
+			data += document.getElementById("B8B").value;
+			
+			ws.send('{"cmd":"updatedelays", "data":"' + data + '"}');
+			};
+		
 		
 		// ========= CONNECTION HANDLING =============
 		
@@ -129,20 +189,44 @@ input::before {
 				
 				ws.onmessage = (message) => {
 					
+					// parse the data
 					const d = JSON.parse( message.data );
-					
 					console.log( d );
 					
-					if(d.bellenabled[0] == 0) document.getElementById("bell1").checked = false; else document.getElementById("bell1").checked = true; 
-					if(d.bellenabled[1] == 0) document.getElementById("bell2").checked = false; else document.getElementById("bell2").checked = true; 
-					if(d.bellenabled[2] == 0) document.getElementById("bell3").checked = false; else document.getElementById("bell3").checked = true; 
-					if(d.bellenabled[3] == 0) document.getElementById("bell4").checked = false; else document.getElementById("bell4").checked = true; 
-					if(d.bellenabled[4] == 0) document.getElementById("bell5").checked = false; else document.getElementById("bell5").checked = true; 
-					if(d.bellenabled[5] == 0) document.getElementById("bell6").checked = false; else document.getElementById("bell6").checked = true; 
-					if(d.bellenabled[6] == 0) document.getElementById("bell7").checked = false; else document.getElementById("bell7").checked = true; 
-					if(d.bellenabled[7] == 0) document.getElementById("bell8").checked = false; else document.getElementById("bell8").checked = true; 
-				  };
-			  
+					// put the reset handstroke button back to normal (not red)
+					resethandstrokeStatus.className = 'button1';
+					// put the update delays back to normal (not red)
+					updatedelaysStatus.className = 'button1';
+					
+					// set the bell enabled/dissabled sliders
+					if(d.settings.bellenabled[0] == 0) document.getElementById("bell1").checked = false; else document.getElementById("bell1").checked = true; 
+					if(d.settings.bellenabled[1] == 0) document.getElementById("bell2").checked = false; else document.getElementById("bell2").checked = true; 
+					if(d.settings.bellenabled[2] == 0) document.getElementById("bell3").checked = false; else document.getElementById("bell3").checked = true; 
+					if(d.settings.bellenabled[3] == 0) document.getElementById("bell4").checked = false; else document.getElementById("bell4").checked = true; 
+					if(d.settings.bellenabled[4] == 0) document.getElementById("bell5").checked = false; else document.getElementById("bell5").checked = true; 
+					if(d.settings.bellenabled[5] == 0) document.getElementById("bell6").checked = false; else document.getElementById("bell6").checked = true; 
+					if(d.settings.bellenabled[6] == 0) document.getElementById("bell7").checked = false; else document.getElementById("bell7").checked = true; 
+					if(d.settings.bellenabled[7] == 0) document.getElementById("bell8").checked = false; else document.getElementById("bell8").checked = true; 
+					
+					// update the delay fields
+					document.getElementById("B1H").value = d.bells[0].delay[0];
+					document.getElementById("B1B").value = d.bells[0].delay[1];
+					document.getElementById("B2H").value = d.bells[1].delay[0];
+					document.getElementById("B2B").value = d.bells[1].delay[1];
+					document.getElementById("B3H").value = d.bells[2].delay[0];
+					document.getElementById("B3B").value = d.bells[2].delay[1];
+					document.getElementById("B4H").value = d.bells[3].delay[0];
+					document.getElementById("B4B").value = d.bells[3].delay[1];
+					document.getElementById("B5H").value = d.bells[4].delay[0];
+					document.getElementById("B5B").value = d.bells[4].delay[1];
+					document.getElementById("B6H").value = d.bells[5].delay[0];
+					document.getElementById("B6B").value = d.bells[5].delay[1];
+					document.getElementById("B7H").value = d.bells[6].delay[0];
+					document.getElementById("B7B").value = d.bells[6].delay[1];
+					document.getElementById("B8H").value = d.bells[7].delay[0];
+					document.getElementById("B8B").value = d.bells[7].delay[1];
+					};
+				
 				// Send the message 'Ping' to the server each time we open socket
 				ws.send('{"cmd":"get"}');
 			  
