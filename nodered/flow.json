@@ -8,54 +8,6 @@
         "env": []
     },
     {
-        "id": "b947d8ebc3818f54",
-        "type": "group",
-        "z": "8d90a5ae55857ec5",
-        "name": "test wav files",
-        "style": {
-            "fill": "#d1d1d1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "dcb95e21199d87ad",
-            "4e516e69f1ab4f5c",
-            "b3b85ef9c763d107",
-            "74acfed5b9c7febd",
-            "783a288fc932a435",
-            "7d59e76cde3cc7ae",
-            "515c0eaf60e1b248",
-            "a451e4b1221941d5",
-            "edc114481b284e0e"
-        ],
-        "x": 34,
-        "y": 1279,
-        "w": 412,
-        "h": 362
-    },
-    {
-        "id": "4e93cf2787340a06",
-        "type": "group",
-        "z": "8d90a5ae55857ec5",
-        "name": "test bell config",
-        "style": {
-            "fill": "#d1d1d1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "be8985333db35b16",
-            "4ef1a5cb7272ca86",
-            "6a097bd6c49dc47e",
-            "8c6d082944afb943",
-            "ce1b50d34419c6d0"
-        ],
-        "x": 34,
-        "y": 1139,
-        "w": 772,
-        "h": 122
-    },
-    {
         "id": "02e9b3aca6652e2b",
         "type": "group",
         "z": "8d90a5ae55857ec5",
@@ -106,7 +58,6 @@
             "251da20c83819b29",
             "4197157f4caa2043",
             "cf9ecfb43b02dfeb",
-            "7eb552c367c7f02a",
             "d657c3419e3d03ff"
         ],
         "x": 34,
@@ -136,7 +87,6 @@
             "424ce565ef77a5f8",
             "a2ba6e83bb82bb48",
             "0ebdbd4676ed566e",
-            "f6f26dc7eb1de72c",
             "1ac12f63b6d25244",
             "58b2474e75b04178",
             "7db5f87f8bebe913",
@@ -145,9 +95,9 @@
             "65c7edc8544084be"
         ],
         "x": 34,
-        "y": 79,
+        "y": 119,
         "w": 992,
-        "h": 322
+        "h": 282
     },
     {
         "id": "7393e8371617defb",
@@ -171,7 +121,7 @@
             "292669f35586086e"
         ],
         "x": 34,
-        "y": 1659,
+        "y": 1119,
         "w": 592,
         "h": 242
     },
@@ -208,260 +158,12 @@
         "wires": []
     },
     {
-        "id": "4e516e69f1ab4f5c",
-        "type": "inject",
-        "z": "8d90a5ae55857ec5",
-        "g": "b947d8ebc3818f54",
-        "name": "2",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "file",
-                "v": "2.wav",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "start",
-        "payloadType": "str",
-        "x": 130,
-        "y": 1360,
-        "wires": [
-            [
-                "dcb95e21199d87ad"
-            ]
-        ]
-    },
-    {
-        "id": "b3b85ef9c763d107",
-        "type": "inject",
-        "z": "8d90a5ae55857ec5",
-        "g": "b947d8ebc3818f54",
-        "name": "3",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "file",
-                "v": "3.wav",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "start",
-        "payloadType": "str",
-        "x": 130,
-        "y": 1400,
-        "wires": [
-            [
-                "dcb95e21199d87ad"
-            ]
-        ]
-    },
-    {
-        "id": "74acfed5b9c7febd",
-        "type": "inject",
-        "z": "8d90a5ae55857ec5",
-        "g": "b947d8ebc3818f54",
-        "name": "4",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "file",
-                "v": "4.wav",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "start",
-        "payloadType": "str",
-        "x": 130,
-        "y": 1440,
-        "wires": [
-            [
-                "dcb95e21199d87ad"
-            ]
-        ]
-    },
-    {
-        "id": "783a288fc932a435",
-        "type": "inject",
-        "z": "8d90a5ae55857ec5",
-        "g": "b947d8ebc3818f54",
-        "name": "5",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "file",
-                "v": "5.wav",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "start",
-        "payloadType": "str",
-        "x": 130,
-        "y": 1480,
-        "wires": [
-            [
-                "dcb95e21199d87ad"
-            ]
-        ]
-    },
-    {
-        "id": "7d59e76cde3cc7ae",
-        "type": "inject",
-        "z": "8d90a5ae55857ec5",
-        "g": "b947d8ebc3818f54",
-        "name": "7",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "file",
-                "v": "7.wav",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "start",
-        "payloadType": "str",
-        "x": 130,
-        "y": 1560,
-        "wires": [
-            [
-                "dcb95e21199d87ad"
-            ]
-        ]
-    },
-    {
-        "id": "515c0eaf60e1b248",
-        "type": "inject",
-        "z": "8d90a5ae55857ec5",
-        "g": "b947d8ebc3818f54",
-        "name": "6",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "file",
-                "v": "6.wav",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "start",
-        "payloadType": "str",
-        "x": 130,
-        "y": 1520,
-        "wires": [
-            [
-                "dcb95e21199d87ad"
-            ]
-        ]
-    },
-    {
-        "id": "a451e4b1221941d5",
-        "type": "inject",
-        "z": "8d90a5ae55857ec5",
-        "g": "b947d8ebc3818f54",
-        "name": "8",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "file",
-                "v": "8.wav",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "start",
-        "payloadType": "str",
-        "x": 130,
-        "y": 1600,
-        "wires": [
-            [
-                "dcb95e21199d87ad"
-            ]
-        ]
-    },
-    {
-        "id": "edc114481b284e0e",
-        "type": "inject",
-        "z": "8d90a5ae55857ec5",
-        "g": "b947d8ebc3818f54",
-        "name": "1",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "file",
-                "v": "1.wav",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "start",
-        "payloadType": "str",
-        "x": 130,
-        "y": 1320,
-        "wires": [
-            [
-                "dcb95e21199d87ad"
-            ]
-        ]
-    },
-    {
         "id": "dffe941760733dde",
         "type": "function",
         "z": "8d90a5ae55857ec5",
         "g": "8e68ca5ab98f2f2c",
         "name": "process",
-        "func": "\n// load the bell config - stored in the config file\nmsg.bellconfig = context.global.get(\"BELLS\");\n\n// load the bell settings - transitory params\nmsg.bellsettings = context.global.get(\"BELLsettings\");\n\n// which bell has been rung?\nmsg.bell = msg.payload[0] - 0x30;\n\n// is it a valid bell ie 1 to 8 and is it enabled!?\nif ((msg.bell >= 1) && (msg.bell <= 8) && (msg.bellsettings.bellenabled[msg.bell-1]==1))\n    {\n    // check bell ringing gap settings\n    msg.ringgap = Date.now() - msg.bellsettings.previousringms[msg.bell - 1];\n    msg.bellsettings.previousringms[msg.bell - 1] = Date.now();\n    msg.bRing = true;\n    \n    // are we removing rapid bell triggers?\n    if( msg.bellsettings.removerapid )\n        {\n        // is the gap between triggers big enough\n        if (msg.ringgap < msg.bellsettings.rapidms)\n            {\n            // dont ring the bell - triggers are too quick\n            msg.bRing = false;\n            }\n        }\n    \n    // should we ring the bell ?\n    if (msg.bRing)\n        {\n        var msgPC = {};\n        \n        // check the last ring time to see if we need to reset the stroke we are on\n        var d = Date.now();\n        msg.lastRingTime = context.global.get(\"lastRingTime\");\n        context.global.set( \"lastRingTime\", d );\n        if ( (d - msg.lastRingTime) > 15000 )\n            {\n            // auto reset the ishandstroke\n            msg.bellsettings.ishandstroke = [1, 1, 1, 1, 1, 1, 1, 1];\n            context.global.set( \"BELLsettings\", msg.bellsettings );\n            }\n        \n        // the delay is dependent on the stroke\n        var handstroke = msg.bellsettings.ishandstroke[msg.bell - 1];\n        \n        // flip handstroke to backstroke and back\n        msg.bellsettings.ishandstroke[msg.bell - 1] = 1 - handstroke;\n        \n        // now we can get the correct delay\n        msg.delay = msg.bellconfig[msg.bell - 1].delay[handstroke];\n        \n        // should we re-map this bell because bigger bells are dissabled?\n        msg.bellsDissabled = 0;\n        for (let b = msg.bell-1; b < 8; b++)\n            {\n            // \n            if (msg.bellsettings.bellenabled[b]==0 )\n                {\n                msg.bellsDissabled++;\n                }\n            }\n        msg.bell = msg.bell + msg.bellsDissabled;\n        \n        // setup the audio params for a bell to ring\n        msg.file = msg.bellconfig[ msg.bell - 1 ].file;\n        msg.payload = \"\" + (msg.bell - 1);\n        \n        // setup the PC msg\n        //msgPC.payload = [ 0x30 + msg.bell - 1 ];\n        msgPC.payload = msg.bell;\n        \n        // done\n        return [msgPC, msg];\n        }\n    }\n\nreturn [null, null];",
+        "func": "\n// load the bell config - stored in the config file\nmsg.bellconfig = context.global.get(\"BELLS\");\n\n// load the bell settings - transitory params\nmsg.bellsettings = context.global.get(\"BELLsettings\");\n\n// which bell has been rung?\nmsg.bell = msg.payload[0] - 0x30;\n\n// is it a valid bell ie 1 to 8 and is it enabled!?\nif ((msg.bell >= 1) && (msg.bell <= 8) && (msg.bellsettings.bellenabled[msg.bell-1]==1))\n    {\n    // check bell ringing gap settings\n    msg.ringgap = Date.now() - msg.bellsettings.previousringms[msg.bell - 1];\n    msg.bellsettings.previousringms[msg.bell - 1] = Date.now();\n    msg.bRing = true;\n    \n    // are we removing rapid bell triggers?\n    if( msg.bellsettings.removerapid )\n        {\n        // is the gap between triggers big enough\n        if (msg.ringgap < msg.bellsettings.rapidms)\n            {\n            // dont ring the bell - triggers are too quick\n            msg.bRing = false;\n            }\n        }\n    \n    // should we ring the bell ?\n    if (msg.bRing)\n        {\n        var msgPC = {};\n        \n        // check the last ring time to see if we need to reset the stroke we are on\n        var d = Date.now();\n        msg.lastRingTime = context.global.get(\"lastRingTime\");\n        context.global.set( \"lastRingTime\", d );\n        if ( (d - msg.lastRingTime) > 15000 )\n            {\n            // auto reset the ishandstroke\n            msg.bellsettings.ishandstroke = [1, 1, 1, 1, 1, 1, 1, 1];\n            context.global.set( \"BELLsettings\", msg.bellsettings );\n            }\n        \n        // the delay is dependent on the stroke\n        var handstroke = msg.bellsettings.ishandstroke[msg.bell - 1];\n        \n        // flip handstroke to backstroke and back\n        msg.bellsettings.ishandstroke[msg.bell - 1] = 1 - handstroke;\n        \n        // now we can get the correct delay\n        msg.delay = msg.bellconfig[msg.bell - 1].delay[handstroke];\n        \n        // should we re-map this bell because bigger bells are dissabled?\n        msg.bellsDissabled = 0;\n        for (let b = msg.bell-1; b < 8; b++)\n            {\n            // \n            if (msg.bellsettings.bellenabled[b]==0 )\n                {\n                msg.bellsDissabled++;\n                }\n            }\n        msg.bell = msg.bell + msg.bellsDissabled;\n        \n        // setup the audio params for a bell to ring\n        msg.file = msg.bellconfig[ msg.bell - 1 ].file;\n        msg.directory = \".node-red/www/audio/\"\n        msg.payload = \"\" + (msg.bell - 1);\n        \n        // setup the PC msg\n        //msgPC.payload = [ 0x30 + msg.bell - 1 ];\n        msgPC.payload = msg.bell;\n        \n        // done\n        return [msgPC, msg];\n        }\n    }\n\nreturn [null, null];",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -475,51 +177,6 @@
             ],
             [
                 "878e699898a92643"
-            ]
-        ]
-    },
-    {
-        "id": "be8985333db35b16",
-        "type": "debug",
-        "z": "8d90a5ae55857ec5",
-        "g": "4e93cf2787340a06",
-        "name": "debug",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 670,
-        "y": 1220,
-        "wires": []
-    },
-    {
-        "id": "4ef1a5cb7272ca86",
-        "type": "delay",
-        "z": "8d90a5ae55857ec5",
-        "g": "4e93cf2787340a06",
-        "name": "delay",
-        "pauseType": "delayv",
-        "timeout": "5",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 510,
-        "y": 1180,
-        "wires": [
-            [
-                "be8985333db35b16",
-                "ce1b50d34419c6d0"
             ]
         ]
     },
@@ -568,52 +225,6 @@
         "wires": []
     },
     {
-        "id": "6a097bd6c49dc47e",
-        "type": "inject",
-        "z": "8d90a5ae55857ec5",
-        "g": "4e93cf2787340a06",
-        "name": "test delays",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "start",
-        "payloadType": "str",
-        "x": 140,
-        "y": 1180,
-        "wires": [
-            [
-                "8c6d082944afb943"
-            ]
-        ]
-    },
-    {
-        "id": "8c6d082944afb943",
-        "type": "function",
-        "z": "8d90a5ae55857ec5",
-        "g": "4e93cf2787340a06",
-        "name": "test defaults",
-        "func": "\nmsg.bellconfig = context.global.get(\"BELLS\");\n\nreturn [msg.bellconfig ];\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 350,
-        "y": 1180,
-        "wires": [
-            [
-                "4ef1a5cb7272ca86"
-            ]
-        ]
-    },
-    {
         "id": "878e699898a92643",
         "type": "delay",
         "z": "8d90a5ae55857ec5",
@@ -635,9 +246,9 @@
         "y": 560,
         "wires": [
             [
-                "c9d8bb1e747b9d8b",
                 "6a615214c335ab89",
-                "d657c3419e3d03ff"
+                "d657c3419e3d03ff",
+                "c9d8bb1e747b9d8b"
             ]
         ]
     },
@@ -778,7 +389,7 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "2",
+        "onceDelay": "0.5",
         "topic": "",
         "payload": "",
         "payloadType": "date",
@@ -856,13 +467,18 @@
         "type": "function",
         "z": "8d90a5ae55857ec5",
         "g": "52128944b93b0aaa",
-        "name": "config filename",
-        "func": "\n// null the BELLS global context\ncontext.global.set(\"BELLS\", null );\n\n// configure the default config file location\n//    on the pi its \"/home/tower/bell.config\"\n//    on windows its \"bell.config\"\n\ncontext.global.set(\"CONFIGFILENAME\", \"/home/tower/bell.config\");\n//context.global.set(\"CONFIGFILENAME\", \"bell.config\");\n\nmsg.filename = context.global.get(\"CONFIGFILENAME\");\n\nreturn msg;",
+        "name": "setup filename's",
+        "func": "\n// null the BELLS global context\ncontext.global.set(\"BELLS\", null );\n\n// configure the default config file location\n//    on the pi its \"/home/tower/bell.config\"\n//    on windows its \"bell.config\"\nif (os.platform() == \"win32\")\n    {\n    // window default location\n    context.global.set(\"CONFIGFILENAME\", \"./bell.config\");\n    context.global.set(\"AUDIOPATH\", \".node-red/www/audio\");\n    }\nelse\n    {\n    // non windows default location\n    context.global.set(\"CONFIGFILENAME\", \"/home/tower/bell.config\");\n    context.global.set(\"AUDIOPATH\", \"/home/tower/.node-red/www/audio\");\n    }\n\nmsg.filename = context.global.get(\"CONFIGFILENAME\");\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "libs": [],
+        "libs": [
+            {
+                "var": "os",
+                "module": "os"
+            }
+        ],
         "x": 360,
         "y": 160,
         "wires": [
@@ -1212,53 +828,6 @@
         "icon": "node-red/alert.svg"
     },
     {
-        "id": "dcb95e21199d87ad",
-        "type": "play-soundfile",
-        "z": "8d90a5ae55857ec5",
-        "g": "b947d8ebc3818f54",
-        "name": "",
-        "directory": "1e52b3ee0e77ef98",
-        "file": "",
-        "allow_multiple": true,
-        "x": 340,
-        "y": 1440,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c9d8bb1e747b9d8b",
-        "type": "play-soundfile",
-        "z": "8d90a5ae55857ec5",
-        "g": "8e68ca5ab98f2f2c",
-        "name": "",
-        "directory": "3cb20e82cf00eb90",
-        "file": "",
-        "allow_multiple": true,
-        "x": 720,
-        "y": 560,
-        "wires": [
-            [
-                "7456347210ef4c4a"
-            ]
-        ]
-    },
-    {
-        "id": "ce1b50d34419c6d0",
-        "type": "play-soundfile",
-        "z": "8d90a5ae55857ec5",
-        "g": "4e93cf2787340a06",
-        "name": "",
-        "directory": "1e52b3ee0e77ef98",
-        "file": "",
-        "allow_multiple": true,
-        "x": 700,
-        "y": 1180,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "c4a55e05f345c09b",
         "type": "serial in",
         "z": "8d90a5ae55857ec5",
@@ -1282,18 +851,7 @@
         "name": "",
         "serial": "f7cbf4321425d80a",
         "x": 720,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "f6f26dc7eb1de72c",
-        "type": "comment",
-        "z": "8d90a5ae55857ec5",
-        "g": "52128944b93b0aaa",
-        "name": "bell config file",
-        "info": "on the pi its \"/home/tower/bell.config\"\non windows its \"bell.config\"\n",
-        "x": 370,
-        "y": 120,
+        "y": 500,
         "wires": []
     },
     {
@@ -1309,7 +867,7 @@
         "finalize": "",
         "libs": [],
         "x": 290,
-        "y": 1700,
+        "y": 1160,
         "wires": [
             [
                 "b3fe46310597b5d2"
@@ -1339,7 +897,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 130,
-        "y": 1700,
+        "y": 1160,
         "wires": [
             [
                 "9957c3dba3eab083"
@@ -1359,7 +917,7 @@
         "finalize": "",
         "libs": [],
         "x": 290,
-        "y": 1740,
+        "y": 1200,
         "wires": [
             [
                 "b3fe46310597b5d2"
@@ -1389,7 +947,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 130,
-        "y": 1740,
+        "y": 1200,
         "wires": [
             [
                 "0c9afbb79d41858e"
@@ -1411,7 +969,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 520,
-        "y": 1720,
+        "y": 1180,
         "wires": []
     },
     {
@@ -1427,7 +985,7 @@
         "finalize": "",
         "libs": [],
         "x": 290,
-        "y": 1780,
+        "y": 1240,
         "wires": [
             [
                 "b3fe46310597b5d2"
@@ -1457,7 +1015,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 130,
-        "y": 1780,
+        "y": 1240,
         "wires": [
             [
                 "fbc18c8e961a0213"
@@ -1552,17 +1110,6 @@
         "wires": []
     },
     {
-        "id": "7eb552c367c7f02a",
-        "type": "comment",
-        "z": "8d90a5ae55857ec5",
-        "g": "8e68ca5ab98f2f2c",
-        "name": "audio file path",
-        "info": "on the pi its \"/home/tower/.node-red/www/audio\"\non windows its \".node-red/www/audio/\"",
-        "x": 750,
-        "y": 520,
-        "wires": []
-    },
-    {
         "id": "8fdf8cb61d4aa25f",
         "type": "function",
         "z": "8d90a5ae55857ec5",
@@ -1575,7 +1122,7 @@
         "finalize": "",
         "libs": [],
         "x": 290,
-        "y": 1860,
+        "y": 1320,
         "wires": [
             [
                 "b3fe46310597b5d2"
@@ -1601,7 +1148,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 130,
-        "y": 1860,
+        "y": 1320,
         "wires": [
             [
                 "8fdf8cb61d4aa25f"
@@ -1622,7 +1169,7 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": ".2",
+        "onceDelay": "1.0",
         "topic": "",
         "payload": "",
         "payloadType": "date",
@@ -1655,20 +1202,27 @@
         ]
     },
     {
+        "id": "c9d8bb1e747b9d8b",
+        "type": "play-soundfile",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "",
+        "directory": "bb43bb69a1c070aa",
+        "file": "",
+        "allow_multiple": true,
+        "x": 720,
+        "y": 560,
+        "wires": [
+            [
+                "7456347210ef4c4a"
+            ]
+        ]
+    },
+    {
         "id": "5e1f79b878ff1d2b",
         "type": "websocket-listener",
         "path": "/ws/bell",
         "wholemsg": "false"
-    },
-    {
-        "id": "1e52b3ee0e77ef98",
-        "type": "soundfile-directory",
-        "directory": ".node-red/www/audio/"
-    },
-    {
-        "id": "3cb20e82cf00eb90",
-        "type": "soundfile-directory",
-        "directory": "/home/tower/.node-red/www/audio"
     },
     {
         "id": "3df23b8bee3f648d",
@@ -1713,5 +1267,10 @@
         "type": "websocket-listener",
         "path": "/ws/settings",
         "wholemsg": "false"
+    },
+    {
+        "id": "bb43bb69a1c070aa",
+        "type": "soundfile-directory",
+        "directory": ".notused"
     }
 ]
