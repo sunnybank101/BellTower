@@ -1,0 +1,111 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+#status {
+	font-size: 0.9rem;
+	margin-bottom: 1rem;
+}
+
+.open {
+	color: green;
+}
+
+.closed {
+	color: red;
+}
+
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+</style>
+</head>
+<body>
+
+<h2>Tower Ringing Visualiser</h2>
+
+<p align=center>
+
+<p align=center>Displaying raw arduino sensor data..
+
+<div id="status" class="closed">Conecting...</div>
+
+<hr class="rounded">
+
+<textarea id="rawdata" name="rawdata" rows="16" cols="30">
+<no data>
+</textarea>
+
+<hr class="rounded">
+
+<p align=center><a href="/">[Home]</a>, <a href="/circle.html">[Circle Diagram]</a>, <a href="/line.html">[Line Diagram]</a>, <a href="/raw.html">[Raw Data]</a>
+
+
+<script>
+
+		var socketStatus = document.getElementById('status');
+		var rawDataE = document.getElementById('rawdata');
+		
+		var rawdata = [];
+		
+		// ========= CONNECTION HANDLING =============
+		
+		//wsURL - the string URL of the websocket
+		//waitTimer - the incrementing clock to use if no connection made
+		//waitSeed - used to reset the waitTimer back to default on a successful connection
+		//multiplier - how quickly you want the timer to grow on each unsuccessful connection attempt
+		
+		var ws = null;
+		
+		const openSocket = (wsURL, waitTimer, waitSeed, multiplier) => {
+			
+			ws = new WebSocket(wsURL);
+			console.log(`trying to connect to: ${ws.url}`);
+			
+			ws.onopen = () => {
+			
+				console.log(`connection open to: ${ws.url}`);
+				
+			  	socketStatus.innerHTML = 'Connected';
+				socketStatus.className = 'open';
+				
+				waitTimer = waitSeed; //reset the waitTimer if the connection is made
+				
+				ws.onclose = () => {
+					console.log(`connection closed to: ${ws.url}`);					
+					socketStatus.innerHTML = 'Connecting..';
+					socketStatus.className = 'closed';
+					openSocket(ws.url, waitTimer, waitSeed, multiplier);
+					};
+				
+				ws.onmessage = (message) => {
+					
+					// parse the data
+					//console.log( message.data );
+					
+					//rawdata[0] = message.data;
+					rawdata.push( message.data );
+					
+					rawDataE.innerHTML =  rawdata.join( "\n" );
+					
+					if( rawdata.length > 15 ) rawdata.splice(0, rawdata.length);
+					};
+				
+				// Send the message 'Ping' to the server each time we open socket
+				//ws.send('{"cmd":"get"}');
+			  
+			};
+		  
+			ws.onerror = () => {
+				//increaese the wait timer if not connected, but stop at a max of 2n-1 the check time
+				if(waitTimer < 60000) waitTimer = waitTimer * multiplier; 
+				console.log(`error opening connection ${ws.url}, next attemp in : ${waitTimer/1000} seconds`);
+				setTimeout(()=>{openSocket(ws.url, waitTimer, waitSeed, multiplier)}, waitTimer);
+			};
+		};
+		
+		openSocket('ws://' + document.location.host + '/ws/raw', 1000, 1000, 2)
+		
+</script>

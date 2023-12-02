@@ -59,7 +59,7 @@ hr.rounded {
 <body>
 
 
-<h1>Tower Ringing Simulator</h1>
+<h2>Tower Ringing Simulator</h2>
 
 <div id="status" class="closed">Conecting...</div>
 
@@ -102,9 +102,29 @@ hr.rounded {
 	<button class="button1" id="updatedelays" type="button" onclick='delayupdate();'>Update Delays</button>
 	
 	<hr class="rounded">
+	
+	<h3>Bell Audio</h3>
+	
+	<select name="AudioFileSet" id="AudioFileSet"></select>
+	<button class="button1" id="updateaudio" type="button" onclick='audioupdate();'>Update Audio</button>
+	<br><br>
+	
+	Current audio files
+	<ol>
+	<li><input type="text" id="F1" value="" style="width: 20em; border: 0px">
+	<li><input type="text" id="F2" value="" style="width: 20em; border: 0px">
+	<li><input type="text" id="F3" value="" style="width: 20em; border: 0px">
+	<li><input type="text" id="F4" value="" style="width: 20em; border: 0px">
+	<li><input type="text" id="F5" value="" style="width: 20em; border: 0px">
+	<li><input type="text" id="F6" value="" style="width: 20em; border: 0px">
+	<li><input type="text" id="F7" value="" style="width: 20em; border: 0px">
+	<li><input type="text" id="F8" value="" style="width: 20em; border: 0px">
+	</ol>
+	
+	<hr class="rounded">
 </form>
 
-<p><a href="/">[Home]</a>, <a href="/circle.html">[Circle Diagram]</a>, <a href="/line.html">[Line Diagram]</a>
+<p><a href="/">[Home]</a>, <a href="/circle.html">[Circle Diagram]</a>, <a href="/line.html">[Line Diagram]</a>, <a href="/raw.html">[Raw Data]</a>
 
 
 <script>
@@ -153,7 +173,13 @@ hr.rounded {
 			
 			ws.send('{"cmd":"updatedelays", "data":"' + data + '"}');
 			};
-		
+			
+		// send a ws request to turn the bell on off inline with the checkbox`
+		function audioupdate() {
+			var audioSelected = document.getElementById("AudioFileSet").value
+			console.log( "Audio: " + audioSelected );
+			ws.send('{"cmd":"audio", "fileset":"' + audioSelected + '"}');
+			};
 		
 		// ========= CONNECTION HANDLING =============
 		
@@ -225,6 +251,33 @@ hr.rounded {
 					document.getElementById("B7B").value = d.bells[6].delay[1];
 					document.getElementById("B8H").value = d.bells[7].delay[0];
 					document.getElementById("B8B").value = d.bells[7].delay[1];
+					
+					// update the audio file fields
+					document.getElementById("F1").value = d.bells[0].file;
+					document.getElementById("F2").value = d.bells[1].file;
+					document.getElementById("F3").value = d.bells[2].file;
+					document.getElementById("F4").value = d.bells[3].file;
+					document.getElementById("F5").value = d.bells[4].file;
+					document.getElementById("F6").value = d.bells[5].file;
+					document.getElementById("F7").value = d.bells[6].file;
+					document.getElementById("F8").value = d.bells[7].file;
+					
+					// audio sets
+					console.log( JSON.stringify( d.settings.audiosets ) );
+					var AudioFileSet = document.getElementById('AudioFileSet');
+					AudioFileSet.innerHTML = "";
+					for (var i = 0; i < d.settings.audiosets.length; i++) {
+						var option = document.createElement("option");
+						option.setAttribute("value", i);
+						option.text = d.settings.audiosets[i];
+						AudioFileSet.appendChild(option);
+					}
+					//AudioFileSet.selected = d.settings.audiosets[ d.settings.audioset ];
+					AudioFileSet.selectedIndex = d.settings.audioset;
+					
+					// current set
+					console.log( d.settings.audioset );
+					
 					};
 				
 				// Send the message 'Ping' to the server each time we open socket

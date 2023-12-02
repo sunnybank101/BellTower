@@ -1,0 +1,1736 @@
+[
+    {
+        "id": "8d90a5ae55857ec5",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "02e9b3aca6652e2b",
+        "type": "group",
+        "z": "8d90a5ae55857ec5",
+        "name": "test real flow without sensors",
+        "style": {
+            "label": true,
+            "color": "#000000",
+            "fill": "#d1d1d1"
+        },
+        "nodes": [
+            "2f8952bd1168bdd7",
+            "923f71728d838334",
+            "bd8b3b1fd03430a2",
+            "08ada73645f435eb",
+            "3fd1b4e689562059",
+            "e22651ceb9754a4c",
+            "3d9fbbbc43dddd34",
+            "8868ce2652896027",
+            "07da068ed2bb75cc"
+        ],
+        "x": 14,
+        "y": 939,
+        "w": 302,
+        "h": 362
+    },
+    {
+        "id": "8e68ca5ab98f2f2c",
+        "type": "group",
+        "z": "8d90a5ae55857ec5",
+        "name": "bell ringing flow",
+        "style": {
+            "stroke": "#ff0000",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "c4a55e05f345c09b",
+            "c9d8bb1e747b9d8b",
+            "dffe941760733dde",
+            "878e699898a92643",
+            "080cdf745e48503c",
+            "7456347210ef4c4a",
+            "662c71d246911b69",
+            "d657c3419e3d03ff",
+            "2e9583658bcf9cd5",
+            "7028cc3bf87765f3",
+            "6a615214c335ab89",
+            "251da20c83819b29",
+            "4197157f4caa2043",
+            "cf9ecfb43b02dfeb",
+            "d657c3419e3d03ff",
+            "59ade4e0f238b77f",
+            "cb7024e1e3144f64",
+            "5e52acd2a4ce9e21",
+            "90c607819dc5ea59"
+        ],
+        "x": 14,
+        "y": 619,
+        "w": 1132,
+        "h": 302
+    },
+    {
+        "id": "52128944b93b0aaa",
+        "type": "group",
+        "z": "8d90a5ae55857ec5",
+        "name": "configuration",
+        "style": {
+            "stroke": "#ff0000",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "9a4f5106421534ef",
+            "289a59490b59c073",
+            "ba4d7c38025b89d4",
+            "11bab60d041a2e1b",
+            "b2468cb2c8ff043c",
+            "bc92dfc0c8f247d0",
+            "49c715217f107fa7",
+            "255b9f849bdfc9e0",
+            "424ce565ef77a5f8",
+            "a2ba6e83bb82bb48",
+            "0ebdbd4676ed566e",
+            "1ac12f63b6d25244",
+            "58b2474e75b04178",
+            "7db5f87f8bebe913",
+            "e8786e257384b31f",
+            "b3d2684cbee6df77",
+            "65c7edc8544084be",
+            "e840c07cda409cd4",
+            "d977917966f64973",
+            "766dc637ecfa1e6b",
+            "e47830edbe6660fc",
+            "cdcdbb2288c93f1a",
+            "85e409a5924e0084",
+            "4f697426ef6e35d7",
+            "a49de69eaa5f63c8",
+            "7de49d77a632275a",
+            "92b84564520854ab",
+            "b842352a4fe830ed"
+        ],
+        "x": 14,
+        "y": 99,
+        "w": 1132,
+        "h": 482
+    },
+    {
+        "id": "7393e8371617defb",
+        "type": "group",
+        "z": "8d90a5ae55857ec5",
+        "name": "test settings",
+        "style": {
+            "fill": "#d1d1d1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "9957c3dba3eab083",
+            "9ac5a250c64de5fa",
+            "0c9afbb79d41858e",
+            "94dbeba4931af7de",
+            "b3fe46310597b5d2",
+            "fbc18c8e961a0213",
+            "a730f0794f13aa97",
+            "8fdf8cb61d4aa25f",
+            "292669f35586086e"
+        ],
+        "x": 14,
+        "y": 1319,
+        "w": 592,
+        "h": 242
+    },
+    {
+        "id": "5d5bcb34d83e7f5a",
+        "type": "group",
+        "z": "8d90a5ae55857ec5",
+        "name": "test \"Ring Rounds\"",
+        "style": {
+            "fill": "#d1d1d1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "4add26c69841bc32",
+            "b1d905d0bb5bf253",
+            "d0d02e3b959c4be0",
+            "1e10071780f436da",
+            "8ba5b1a416580237"
+        ],
+        "x": 334,
+        "y": 939,
+        "w": 552,
+        "h": 122
+    },
+    {
+        "id": "5e1f79b878ff1d2b",
+        "type": "websocket-listener",
+        "path": "/ws/bell",
+        "wholemsg": "false"
+    },
+    {
+        "id": "3df23b8bee3f648d",
+        "type": "serial-port",
+        "serialport": "/dev/ttyUSB_ARDUINO",
+        "serialbaud": "2400",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "1",
+        "bin": "bin",
+        "out": "count",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "f7cbf4321425d80a",
+        "type": "serial-port",
+        "serialport": "/dev/ttyUSB_PC",
+        "serialbaud": "2400",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "1",
+        "bin": "bin",
+        "out": "count",
+        "addchar": "",
+        "responsetimeout": "20"
+    },
+    {
+        "id": "69cec02cf603f145",
+        "type": "websocket-listener",
+        "path": "/ws/settings",
+        "wholemsg": "false"
+    },
+    {
+        "id": "bb43bb69a1c070aa",
+        "type": "soundfile-directory",
+        "directory": ""
+    },
+    {
+        "id": "7d7fa7c1b9ec750d",
+        "type": "websocket-listener",
+        "path": "/ws/raw",
+        "wholemsg": "false"
+    },
+    {
+        "id": "4c5ac00fbd982ea8",
+        "type": "catch",
+        "z": "8d90a5ae55857ec5",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 790,
+        "y": 40,
+        "wires": [
+            [
+                "86581b9f3951fab8"
+            ]
+        ]
+    },
+    {
+        "id": "86581b9f3951fab8",
+        "type": "debug",
+        "z": "8d90a5ae55857ec5",
+        "name": "ERRORS",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "dffe941760733dde",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "process",
+        "func": "\n// load the bell config - stored in the config file\nmsg.bellconfig = context.global.get(\"BELLS\");\n\n// load the bell settings - transitory params\nmsg.bellsettings = context.global.get(\"BELLsettings\");\n\n// which bell has been rung?\nmsg.bell = msg.payload[0] - 0x30;\n\n// is it a valid bell ie 1 to 8 and is it enabled!?\nif ((msg.bell >= 1) && (msg.bell <= 8) && (msg.bellsettings.bellenabled[msg.bell-1]==1))\n    {\n    // check bell ringing gap settings\n    msg.ringgap = Date.now() - msg.bellsettings.previousringms[msg.bell - 1];\n    msg.bellsettings.previousringms[msg.bell - 1] = Date.now();\n    msg.bRing = true;\n    \n    // are we removing rapid bell triggers?\n    if( msg.bellsettings.removerapid )\n        {\n        // is the gap between triggers big enough\n        if (msg.ringgap < msg.bellsettings.rapidms)\n            {\n            // dont ring the bell - triggers are too quick\n            msg.bRing = false;\n            }\n        }\n    \n    // should we ring the bell ?\n    if (msg.bRing)\n        {\n        //var msgPC = {};\n        \n        // check the last ring time to see if we need to reset the stroke we are on\n        var d = Date.now();\n        msg.lastRingTime = context.global.get(\"lastRingTime\");\n        context.global.set( \"lastRingTime\", d );\n        if ( (d - msg.lastRingTime) > 15000 )\n            {\n            // auto reset the ishandstroke\n            msg.bellsettings.ishandstroke = [1, 1, 1, 1, 1, 1, 1, 1];\n            context.global.set( \"BELLsettings\", msg.bellsettings );\n            }\n        \n        // the delay is dependent on the stroke\n        var handstroke = msg.bellsettings.ishandstroke[msg.bell - 1];\n        \n        // flip handstroke to backstroke and back\n        msg.bellsettings.ishandstroke[msg.bell - 1] = 1 - handstroke;\n        \n        // now we can get the correct delay\n        msg.delay = msg.bellconfig[msg.bell - 1].delay[handstroke];\n        \n        // should we re-map this bell because bigger bells are dissabled?\n        msg.bellsDissabled = 0;\n        for (let b = msg.bell-1; b < 8; b++)\n            {\n            // \n            if (msg.bellsettings.bellenabled[b]==0 )\n                {\n                msg.bellsDissabled++;\n                }\n            }\n        msg.bell = msg.bell + msg.bellsDissabled;\n        \n        // setup the audio params for a bell to ring\n        msg.file = msg.bellconfig[ msg.bell - 1 ].file;\n        msg.directory = \".node-red/www/audio/\"\n\n        //msg.payload = \"\" + (msg.bell - 1);\n        msg.payload = \"\" + msg.bell;\n        \n        // dual bell audio...  ?\n        if( (handstroke) && (msg.bellsettings.dualaudio == true) )\n            {\n            msg.file = msg.bellconfig[ msg.bell - 1 ].dual;\n            }\n\n        // setup the PC msg\n        //msgPC.payload = msg.bell;\n        \n        // done\n        //return [msgPC, msg];\n        return msg;\n        }\n    }\n\n//return [null, null];\n//return null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 720,
+        "wires": [
+            [
+                "cf9ecfb43b02dfeb",
+                "878e699898a92643"
+            ]
+        ]
+    },
+    {
+        "id": "9a4f5106421534ef",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "loadfile",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": ".1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 220,
+        "wires": [
+            [
+                "424ce565ef77a5f8"
+            ]
+        ]
+    },
+    {
+        "id": "289a59490b59c073",
+        "type": "debug",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "878e699898a92643",
+        "type": "delay",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "delay",
+        "pauseType": "delayv",
+        "timeout": "5",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 760,
+        "wires": [
+            [
+                "6a615214c335ab89",
+                "d657c3419e3d03ff",
+                "c9d8bb1e747b9d8b",
+                "5e52acd2a4ce9e21"
+            ]
+        ]
+    },
+    {
+        "id": "080cdf745e48503c",
+        "type": "link in",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "test",
+        "links": [
+            "2f8952bd1168bdd7",
+            "8ba5b1a416580237"
+        ],
+        "x": 215,
+        "y": 760,
+        "wires": [
+            [
+                "dffe941760733dde",
+                "662c71d246911b69",
+                "cb7024e1e3144f64"
+            ]
+        ]
+    },
+    {
+        "id": "2f8952bd1168bdd7",
+        "type": "link out",
+        "z": "8d90a5ae55857ec5",
+        "g": "02e9b3aca6652e2b",
+        "name": "test bell",
+        "mode": "link",
+        "links": [
+            "080cdf745e48503c"
+        ],
+        "x": 275,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "923f71728d838334",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "02e9b3aca6652e2b",
+        "name": "testbell 1",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[49]",
+        "payloadType": "bin",
+        "x": 120,
+        "y": 980,
+        "wires": [
+            [
+                "2f8952bd1168bdd7"
+            ]
+        ]
+    },
+    {
+        "id": "bd8b3b1fd03430a2",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "02e9b3aca6652e2b",
+        "name": "testbell 8",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[56]",
+        "payloadType": "bin",
+        "x": 120,
+        "y": 1260,
+        "wires": [
+            [
+                "2f8952bd1168bdd7"
+            ]
+        ]
+    },
+    {
+        "id": "ba4d7c38025b89d4",
+        "type": "file in",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "B file",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 610,
+        "y": 260,
+        "wires": [
+            [
+                "bc92dfc0c8f247d0"
+            ]
+        ]
+    },
+    {
+        "id": "11bab60d041a2e1b",
+        "type": "debug",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "b2468cb2c8ff043c",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "savefile",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 380,
+        "wires": [
+            [
+                "49c715217f107fa7"
+            ]
+        ]
+    },
+    {
+        "id": "bc92dfc0c8f247d0",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "Bstore",
+        "func": "\nmsg.bellfile = JSON.parse( msg.payload );\n\n// store this setup in the global context\ncontext.global.set(\"BELLS\", msg.bellfile);\n\n// pass it on...\nmsg.bellconfig = context.global.get(\"BELLS\");\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 260,
+        "wires": [
+            [
+                "289a59490b59c073",
+                "49c715217f107fa7"
+            ]
+        ]
+    },
+    {
+        "id": "49c715217f107fa7",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "DEFAULT CONFIG",
+        "func": "\n// bell config setup -----------------\n// FYI this setup is stored in the config file\nmsg.bellconfig = context.global.get(\"BELLS\");\nmsg.audioconfig = context.global.get(\"AUDIO\");\n\nvar reset = false;\nif (msg.bellconfig == undefined)     reset = true;\nif (msg.bellconfig == null)          reset = true;\nif (!Array.isArray(msg.bellconfig))  reset = true;\n\nvar dualaudio = false;\n\nif (reset)\n    {\n    // there is NO config file!!\n    node.warn(\"RESET CONFIG FILE\");\n\n    // set the defaults\n    // first entry of delay is the backstroke delay\n    // audio files names are set by default\n    var bells = [   { file: msg.audioconfig[0].b1, delay: [500, 300] },\n                    { file: msg.audioconfig[0].b2, delay: [300, 300] },\n                    { file: msg.audioconfig[0].b3, delay: [300, 300] },\n                    { file: msg.audioconfig[0].b4, delay: [325, 325] },\n                    { file: msg.audioconfig[0].b5, delay: [325, 325] },\n                    { file: msg.audioconfig[0].b6, delay: [325, 325] },\n                    { file: msg.audioconfig[0].b7, delay: [325, 325] },\n                    { file: msg.audioconfig[0].b8, delay: [350, 350] }\n                ];\n    \n    // store this setup in the global context\n    context.global.set(\"BELLS\", bells);\n    msg.bellconfig = bells;\n    }\nelse\n    {\n    // always reset the bell files to audioset 0\n    var bells = context.global.get(\"BELLS\");\n    \n    // \n    bells[0].file = msg.audioconfig[0].b1;\n    bells[1].file = msg.audioconfig[0].b2;\n    bells[2].file = msg.audioconfig[0].b3;\n    bells[3].file = msg.audioconfig[0].b4;\n    bells[4].file = msg.audioconfig[0].b5;\n    bells[5].file = msg.audioconfig[0].b6;\n    bells[6].file = msg.audioconfig[0].b7;\n    bells[7].file = msg.audioconfig[0].b8;\n\n    //node.warn( bells );    \n    \n    // Check that the Dual audio setting exists\n    if( msg.audioconfig[0].hasOwnProperty( \"dual\" ) )\n        {\n        if( msg.audioconfig[0].dual != null )\n            {\n            bells[0].dual = msg.audioconfig[0].dual.b1;\n            bells[1].dual = msg.audioconfig[0].dual.b2;\n            bells[2].dual = msg.audioconfig[0].dual.b3;\n            bells[3].dual = msg.audioconfig[0].dual.b4;\n            bells[4].dual = msg.audioconfig[0].dual.b5;\n            bells[5].dual = msg.audioconfig[0].dual.b6;\n            bells[6].dual = msg.audioconfig[0].dual.b7;\n            bells[7].dual = msg.audioconfig[0].dual.b8;\n            dualaudio = true;\n            }\n        else\n            {\n            msg.audioconfig[0].dual = null;\n            dualaudio = false;\n            }\n        }\n    else\n        {\n        msg.audioconfig[0].dual = null;\n        dualaudio = false;\n        }\n\n    // store this setup in the global context\n    context.global.set(\"BELLS\", bells);\n    msg.bellconfig = bells;\n    }\n\n// pass it on...\n//msg.payload = context.global.get(\"BELLS\");\nmsg.payload = JSON.stringify(context.global.get(\"BELLS\"), null, 4);\n\n// INTERNALS -----------------\n\n// set the internal settings\n// FYI these settings are NOT stored to file\nvar bsettings = {\n    removerapid: true,\n    rapidms: 600,\n    previousringms: [0, 0, 0, 0, 0, 0, 0, 0],\n    ishandstroke: [1, 1, 1, 1, 1, 1, 1, 1],\n    bellenabled: [1, 1, 1, 1, 1, 1, 1, 1],\n    dualaudio: dualaudio\n    };\n\n// setup the audio - default to set0 on startup\nbsettings.audioset = 0;\nbsettings.audiosets = [];\nmsg.audioconfig.forEach( (element) => bsettings.audiosets.push(element.fileset) );\n\n// store these settings in the global context\ncontext.global.set(\"BELLsettings\", bsettings);\nmsg.bsettings = bsettings;\n\n// -----------------\n\n// setup the config file name\nmsg.filename = context.global.get(\"CONFIGFILENAME\");\n\n// -----------------\n\n// default the last ring time\ncontext.global.set(\"lastRingTime\", Date.now());\n\n//done\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 380,
+        "wires": [
+            [
+                "255b9f849bdfc9e0",
+                "11bab60d041a2e1b"
+            ]
+        ]
+    },
+    {
+        "id": "255b9f849bdfc9e0",
+        "type": "file",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 560,
+        "y": 380,
+        "wires": [
+            [
+                "7de49d77a632275a"
+            ]
+        ]
+    },
+    {
+        "id": "424ce565ef77a5f8",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "setup filename's",
+        "func": "\n// null the BELLS global context\ncontext.global.set(\"BELLS\", null );\n\n// configure the default config file location\n//    on the pi its \"/home/tower/bell.config\"\n//    on windows its \"bell.config\"\nif (os.platform() == \"win32\")\n    {\n    // window default location\n    context.global.set(\"CONFIGFILENAME\", \"./bell.config\");\n    context.global.set(\"AUDIOPATH\", \".node-red/www/audio\");\n    context.global.set(\"AUDIOCONFFILENAME\", \"./audio.config\");\n    }\nelse\n    {\n    // non windows default location\n    context.global.set(\"CONFIGFILENAME\", \"/home/tower/bell.config\");\n    context.global.set(\"AUDIOPATH\", \"/home/tower/.node-red/www/audio\");\n    context.global.set(\"AUDIOCONFFILENAME\", \"/home/tower/audio.config\");\n    }\n\n//msg.filename = context.global.get(\"CONFIGFILENAME\");\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "os",
+                "module": "os"
+            }
+        ],
+        "x": 280,
+        "y": 220,
+        "wires": [
+            [
+                "766dc637ecfa1e6b"
+            ]
+        ]
+    },
+    {
+        "id": "7456347210ef4c4a",
+        "type": "debug",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1050,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "662c71d246911b69",
+        "type": "debug",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 350,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "2e9583658bcf9cd5",
+        "type": "comment",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "RENAME SERIALS",
+        "info": "\nhttps://www.freva.com/assign-fixed-usb-port-names-to-your-raspberry-pi/\n\nThis is a nice way to add a nick name to serial ports",
+        "x": 130,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "7028cc3bf87765f3",
+        "type": "websocket out",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "",
+        "server": "5e1f79b878ff1d2b",
+        "client": "",
+        "x": 910,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "6a615214c335ab89",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "Bell Sounding",
+        "func": "//msg.payload = \"\" + (Number(msg.payload) + 1) + \",ON\";\nmsg.payload = \"\" + msg.bell + \",ON\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 820,
+        "wires": [
+            [
+                "7028cc3bf87765f3",
+                "251da20c83819b29"
+            ]
+        ]
+    },
+    {
+        "id": "251da20c83819b29",
+        "type": "delay",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 530,
+        "y": 880,
+        "wires": [
+            [
+                "4197157f4caa2043"
+            ]
+        ]
+    },
+    {
+        "id": "4197157f4caa2043",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "Bells Silent",
+        "func": "msg.payload = \"\" + msg.bell + \",OFF\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 880,
+        "wires": [
+            [
+                "7028cc3bf87765f3"
+            ]
+        ]
+    },
+    {
+        "id": "08ada73645f435eb",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "02e9b3aca6652e2b",
+        "name": "testbell 2",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[50]",
+        "payloadType": "bin",
+        "x": 120,
+        "y": 1020,
+        "wires": [
+            [
+                "2f8952bd1168bdd7"
+            ]
+        ]
+    },
+    {
+        "id": "3fd1b4e689562059",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "02e9b3aca6652e2b",
+        "name": "testbell 3",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[51]",
+        "payloadType": "bin",
+        "x": 120,
+        "y": 1060,
+        "wires": [
+            [
+                "2f8952bd1168bdd7"
+            ]
+        ]
+    },
+    {
+        "id": "e22651ceb9754a4c",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "02e9b3aca6652e2b",
+        "name": "testbell 4",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[52]",
+        "payloadType": "bin",
+        "x": 120,
+        "y": 1100,
+        "wires": [
+            [
+                "2f8952bd1168bdd7"
+            ]
+        ]
+    },
+    {
+        "id": "3d9fbbbc43dddd34",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "02e9b3aca6652e2b",
+        "name": "testbell 5",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[53]",
+        "payloadType": "bin",
+        "x": 120,
+        "y": 1140,
+        "wires": [
+            [
+                "2f8952bd1168bdd7"
+            ]
+        ]
+    },
+    {
+        "id": "8868ce2652896027",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "02e9b3aca6652e2b",
+        "name": "testbell 6",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[54]",
+        "payloadType": "bin",
+        "x": 120,
+        "y": 1180,
+        "wires": [
+            [
+                "2f8952bd1168bdd7"
+            ]
+        ]
+    },
+    {
+        "id": "07da068ed2bb75cc",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "02e9b3aca6652e2b",
+        "name": "testbell 7",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[55]",
+        "payloadType": "bin",
+        "x": 120,
+        "y": 1220,
+        "wires": [
+            [
+                "2f8952bd1168bdd7"
+            ]
+        ]
+    },
+    {
+        "id": "a2ba6e83bb82bb48",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "RESET CONFIG",
+        "func": "\n// store this setup in the global context\ncontext.global.set(\"BELLS\", null);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 420,
+        "wires": [
+            [
+                "49c715217f107fa7"
+            ]
+        ]
+    },
+    {
+        "id": "0ebdbd4676ed566e",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "RESET",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 420,
+        "wires": [
+            [
+                "a2ba6e83bb82bb48"
+            ]
+        ],
+        "icon": "node-red/alert.svg"
+    },
+    {
+        "id": "28efee93a0336b10",
+        "type": "comment",
+        "z": "8d90a5ae55857ec5",
+        "name": "DONT CHANGE ANYTHING UNLESS YOU KNOW WHAT YOU ARE DOING !",
+        "info": "",
+        "x": 290,
+        "y": 40,
+        "wires": [],
+        "icon": "node-red/alert.svg"
+    },
+    {
+        "id": "c4a55e05f345c09b",
+        "type": "serial in",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "",
+        "serial": "3df23b8bee3f648d",
+        "x": 140,
+        "y": 720,
+        "wires": [
+            [
+                "dffe941760733dde",
+                "662c71d246911b69",
+                "cb7024e1e3144f64"
+            ]
+        ]
+    },
+    {
+        "id": "d657c3419e3d03ff",
+        "type": "serial out",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "",
+        "serial": "f7cbf4321425d80a",
+        "x": 700,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "9957c3dba3eab083",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "7393e8371617defb",
+        "name": "BELLsettings",
+        "func": "\n\n// load the bell settings\nmsg.bellsettings = context.global.get(\"BELLsettings\");\n\nmsg.bellsettings.bellenabled = [1, 1, 1, 1, 1, 1, 1, 1];\n\n// store these settings in the global context\ncontext.global.set( \"BELLsettings\", msg.bellsettings );\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1360,
+        "wires": [
+            [
+                "b3fe46310597b5d2"
+            ]
+        ]
+    },
+    {
+        "id": "9ac5a250c64de5fa",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "7393e8371617defb",
+        "name": "reset",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 1360,
+        "wires": [
+            [
+                "9957c3dba3eab083"
+            ]
+        ]
+    },
+    {
+        "id": "0c9afbb79d41858e",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "7393e8371617defb",
+        "name": "BELLsettings",
+        "func": "\n\n// load the bell settings\nmsg.bellsettings = context.global.get(\"BELLsettings\");\n\nmsg.bellsettings.bellenabled[4] = 0;\n\n// store these settings in the global context\ncontext.global.set(\"BELLsettings\", msg.bellsettings);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1400,
+        "wires": [
+            [
+                "b3fe46310597b5d2"
+            ]
+        ]
+    },
+    {
+        "id": "94dbeba4931af7de",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "7393e8371617defb",
+        "name": "bell5 off",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 1400,
+        "wires": [
+            [
+                "0c9afbb79d41858e"
+            ]
+        ]
+    },
+    {
+        "id": "b3fe46310597b5d2",
+        "type": "debug",
+        "z": "8d90a5ae55857ec5",
+        "g": "7393e8371617defb",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "fbc18c8e961a0213",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "7393e8371617defb",
+        "name": "BELLsettings",
+        "func": "\n\n// load the bell settings\nmsg.bellsettings = context.global.get(\"BELLsettings\");\n\nmsg.bellsettings.bellenabled[7] = 0;\n\n// store these settings in the global context\ncontext.global.set(\"BELLsettings\", msg.bellsettings);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1440,
+        "wires": [
+            [
+                "b3fe46310597b5d2"
+            ]
+        ]
+    },
+    {
+        "id": "a730f0794f13aa97",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "7393e8371617defb",
+        "name": "bell8 off",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 1440,
+        "wires": [
+            [
+                "fbc18c8e961a0213"
+            ]
+        ]
+    },
+    {
+        "id": "cf9ecfb43b02dfeb",
+        "type": "debug",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "1ac12f63b6d25244",
+        "type": "websocket in",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "",
+        "server": "69cec02cf603f145",
+        "client": "",
+        "x": 300,
+        "y": 500,
+        "wires": [
+            [
+                "58b2474e75b04178",
+                "e8786e257384b31f"
+            ]
+        ]
+    },
+    {
+        "id": "7db5f87f8bebe913",
+        "type": "websocket out",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "",
+        "server": "69cec02cf603f145",
+        "client": "",
+        "x": 760,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "58b2474e75b04178",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "settings",
+        "func": "\n// parse the request\nvar cmdReq = JSON.parse( msg.payload );\n\n// are we trying to turn a bell on/off ?\nif( cmdReq.cmd == \"bellonoff\")\n    {\n    // load the bell settings\n    msg.bellsettings = context.global.get(\"BELLsettings\");\n\n    // set the right bell..\n    msg.bell = Number(cmdReq.bell.slice(-1));\n    if (cmdReq.value == true) msg.value = 1; else msg.value = 0; \n    msg.bellsettings.bellenabled[msg.bell-1] = msg.value;\n    \n    // store these settings in the global context\n    context.global.set(\"BELLsettings\", msg.bellsettings);\n    }\n\nif( cmdReq.cmd == \"handstrokereset\" )\n    {\n    // load the bell settings\n    msg.bellsettings = context.global.get(\"BELLsettings\");\n\n    // set the right bell..\n    msg.bellsettings.ishandstroke = [1, 1, 1, 1, 1, 1, 1, 1]\n\n    // store these settings in the global context\n    context.global.set(\"BELLsettings\", msg.bellsettings);\n    }\n\nif (cmdReq.cmd == \"updatedelays\")\n    {\n    // load the bell settings\n    var bells = context.global.get(\"BELLS\");\n    \n    // prep the 16 delays (2 per bell)\n    var dat = cmdReq.data.split(\",\");\n    if ( dat.length == 16 )\n        {\n        node.warn(dat);\n        \n        // update the 8 bell delays\n        bells[0].delay[0] = Number(dat[0]);\n        bells[0].delay[1] = Number(dat[1]);\n        \n        bells[1].delay[0] = Number(dat[2]);\n        bells[1].delay[1] = Number(dat[3]);\n        \n        bells[2].delay[0] = Number(dat[4]);\n        bells[2].delay[1] = Number(dat[5]);\n        \n        bells[3].delay[0] = Number(dat[6]);\n        bells[3].delay[1] = Number(dat[7]);\n        \n        bells[4].delay[0] = Number(dat[8]);\n        bells[4].delay[1] = Number(dat[9]);\n        \n        bells[5].delay[0] = Number(dat[10]);\n        bells[5].delay[1] = Number(dat[11]);\n        \n        bells[6].delay[0] = Number(dat[12]);\n        bells[6].delay[1] = Number(dat[13]);\n        \n        bells[7].delay[0] = Number(dat[14]);\n        bells[7].delay[1] = Number(dat[15]);\n        \n        // store this setup in the global context\n        context.global.set(\"BELLS\", bells);\n        }\n    }\n\nif (cmdReq.cmd == \"audio\")\n    {\n    // load the bell settings\n    var bells = context.global.get(\"BELLS\");\n    var bsettings = context.global.get(\"BELLsettings\");\n    var audio = context.global.get(\"AUDIO\");\n    \n    // update the bellset\n    bsettings.audioset = cmdReq.fileset;\n    \n    // update the files\n    bells[0].file = audio[ cmdReq.fileset ].b1;\n    bells[1].file = audio[ cmdReq.fileset ].b2;\n    bells[2].file = audio[ cmdReq.fileset ].b3;\n    bells[3].file = audio[ cmdReq.fileset ].b4;\n    bells[4].file = audio[ cmdReq.fileset ].b5;\n    bells[5].file = audio[ cmdReq.fileset ].b6;\n    bells[6].file = audio[ cmdReq.fileset ].b7;\n    bells[7].file = audio[ cmdReq.fileset ].b8;\n\n    // Check that the Dual audio setting exists\n    bsettings.dualaudio = false;\n    if( audio[ cmdReq.fileset ].hasOwnProperty( \"dual\" ) )\n        {\n        if( audio[ cmdReq.fileset ].dual != null )\n            {\n            bells[0].dual = audio[ cmdReq.fileset ].dual.b1;\n            bells[1].dual = audio[ cmdReq.fileset ].dual.b2;\n            bells[2].dual = audio[ cmdReq.fileset ].dual.b3;\n            bells[3].dual = audio[ cmdReq.fileset ].dual.b4;\n            bells[4].dual = audio[ cmdReq.fileset ].dual.b5;\n            bells[5].dual = audio[ cmdReq.fileset ].dual.b6;\n            bells[6].dual = audio[ cmdReq.fileset ].dual.b7;\n            bells[7].dual = audio[ cmdReq.fileset ].dual.b8;\n            bsettings.dualaudio = true;\n            }\n        }\n    \n    // \n    context.global.set(\"BELLsettings\", bsettings);\n    \n    // store this setup in the global context\n    context.global.set(\"BELLS\", bells);\n    }\n\n\n// the response is always a complete settings and bells object\nvar msgData = {};\nmsgData.settings = context.global.get(\"BELLsettings\");\nmsgData.bells = context.global.get(\"BELLS\");\nmsg.payload = JSON.stringify( msgData );\n\n// remove the session specific response so everyone gets this update!\nmsg._session = null;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 500,
+        "wires": [
+            [
+                "7db5f87f8bebe913",
+                "e8786e257384b31f",
+                "65c7edc8544084be"
+            ]
+        ]
+    },
+    {
+        "id": "e8786e257384b31f",
+        "type": "debug",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "8fdf8cb61d4aa25f",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "7393e8371617defb",
+        "name": "SETTINGS",
+        "func": "\n// load the bell settings\nmsg.bellsettings = context.global.get(\"BELLsettings\");\nmsg.audiosettings = context.global.get(\"AUDIO\");\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1520,
+        "wires": [
+            [
+                "b3fe46310597b5d2"
+            ]
+        ]
+    },
+    {
+        "id": "292669f35586086e",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "7393e8371617defb",
+        "name": "View",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 1520,
+        "wires": [
+            [
+                "8fdf8cb61d4aa25f"
+            ]
+        ]
+    },
+    {
+        "id": "b3d2684cbee6df77",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "onstart",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2.0",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 540,
+        "wires": [
+            [
+                "58b2474e75b04178"
+            ]
+        ]
+    },
+    {
+        "id": "65c7edc8544084be",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "store updates",
+        "func": "\nmsg.payload = JSON.stringify(context.global.get(\"BELLS\"), null, 4);\n\nmsg.filename = context.global.get(\"CONFIGFILENAME\");\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 440,
+        "wires": [
+            [
+                "255b9f849bdfc9e0"
+            ]
+        ]
+    },
+    {
+        "id": "c9d8bb1e747b9d8b",
+        "type": "play-soundfile",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "",
+        "directory": "bb43bb69a1c070aa",
+        "file": "",
+        "options": "",
+        "allow_multiple": true,
+        "x": 700,
+        "y": 760,
+        "wires": [
+            [
+                "90c607819dc5ea59"
+            ]
+        ]
+    },
+    {
+        "id": "4add26c69841bc32",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "5d5bcb34d83e7f5a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "START",
+        "payloadType": "str",
+        "x": 430,
+        "y": 980,
+        "wires": [
+            [
+                "d0d02e3b959c4be0"
+            ]
+        ]
+    },
+    {
+        "id": "b1d905d0bb5bf253",
+        "type": "inject",
+        "z": "8d90a5ae55857ec5",
+        "g": "5d5bcb34d83e7f5a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "STOP",
+        "payloadType": "str",
+        "x": 430,
+        "y": 1020,
+        "wires": [
+            [
+                "d0d02e3b959c4be0"
+            ]
+        ]
+    },
+    {
+        "id": "d0d02e3b959c4be0",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "5d5bcb34d83e7f5a",
+        "name": "rounds",
+        "func": "var msg2 = null;\n\n// check if we are starting or stopping\nif( msg.payload==\"START\")\n    {\n    global.set(\"TESTbellring\", \"START\");\n    msg.bell = 0;\n    }\nelse if( msg.payload==\"STOP\")\n    {\n    global.set(\"TESTbellring\", \"STOP\");\n    }\nmsg.payload=\"\";\n\n// are we still going\nmsg.TESTbellring = global.get(\"TESTbellring\");\nif( msg.TESTbellring == \"START\" ) \n    {\n    // ring the next bell\n    msg.bell = msg.bell + 1;\n\n    // check if we need to go back to 1\n    if( msg.bell >= 9 ) msg.bell = 1;\n\n    // clone the msg to resend it..\n    msg2 = RED.util.cloneMessage(msg);\n    \n    // setup the bell to ring\n    msg2.payload = [48 + msg.bell];\n    }\n\nreturn [msg, msg2];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 1000,
+        "wires": [
+            [],
+            [
+                "1e10071780f436da"
+            ]
+        ]
+    },
+    {
+        "id": "1e10071780f436da",
+        "type": "delay",
+        "z": "8d90a5ae55857ec5",
+        "g": "5d5bcb34d83e7f5a",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "400",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 730,
+        "y": 1000,
+        "wires": [
+            [
+                "d0d02e3b959c4be0",
+                "8ba5b1a416580237"
+            ]
+        ]
+    },
+    {
+        "id": "8ba5b1a416580237",
+        "type": "link out",
+        "z": "8d90a5ae55857ec5",
+        "g": "5d5bcb34d83e7f5a",
+        "name": "test bell",
+        "mode": "link",
+        "links": [
+            "080cdf745e48503c"
+        ],
+        "x": 845,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "59ade4e0f238b77f",
+        "type": "websocket out",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "",
+        "server": "7d7fa7c1b9ec750d",
+        "client": "",
+        "x": 530,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "cb7024e1e3144f64",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "totxt",
+        "func": "\nvar char = msg.payload[0];\n\nmsg.bell = msg.payload[0] - 0x30;\n\nmsg.payload = \"0x\" + msg.payload[0];\n\nif( (msg.bell >= 0) && (msg.bell <= 9) ) \n    {\n    msg.payload = msg.payload + \" [\" + msg.bell + \"]\";\n    }\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 660,
+        "wires": [
+            [
+                "59ade4e0f238b77f"
+            ]
+        ]
+    },
+    {
+        "id": "e840c07cda409cd4",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "bell.conf",
+        "func": "\nmsg.filename = context.global.get(\"CONFIGFILENAME\");\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 260,
+        "wires": [
+            [
+                "ba4d7c38025b89d4"
+            ]
+        ]
+    },
+    {
+        "id": "d977917966f64973",
+        "type": "file in",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "A file",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 610,
+        "y": 220,
+        "wires": [
+            [
+                "e47830edbe6660fc"
+            ]
+        ]
+    },
+    {
+        "id": "766dc637ecfa1e6b",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "audio.conf",
+        "func": "\nmsg.filename = context.global.get(\"AUDIOCONFFILENAME\");\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 220,
+        "wires": [
+            [
+                "d977917966f64973"
+            ]
+        ]
+    },
+    {
+        "id": "e47830edbe6660fc",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "Astore",
+        "func": "\nmsg.audiofile = JSON.parse( msg.payload );\n\n// store this setup in the global context\ncontext.global.set(\"AUDIO\", msg.audiofile);\n\n// pass it on...\nmsg.audioconfig = context.global.get(\"AUDIO\");\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 220,
+        "wires": [
+            [
+                "cdcdbb2288c93f1a",
+                "e840c07cda409cd4"
+            ]
+        ]
+    },
+    {
+        "id": "cdcdbb2288c93f1a",
+        "type": "debug",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "85e409a5924e0084",
+        "type": "catch",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "",
+        "scope": [
+            "d977917966f64973"
+        ],
+        "uncaught": false,
+        "x": 610,
+        "y": 180,
+        "wires": [
+            [
+                "a49de69eaa5f63c8"
+            ]
+        ]
+    },
+    {
+        "id": "4f697426ef6e35d7",
+        "type": "debug",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a49de69eaa5f63c8",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "no Afile",
+        "func": "\n// defaults\nvar audioconf = [{ fileset: \"default\", b1: \"1.wav\", b2: \"2.wav\", b3: \"3.wav\", b4: \"4.wav\", b5: \"5.wav\", b6: \"6.wav\", b7: \"7.wav\", b8: \"8.wav\", dual: null }];\n\nmsg.payload = JSON.stringify( audioconf ); \n\ndelete msg['error'];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 180,
+        "wires": [
+            [
+                "4f697426ef6e35d7",
+                "e47830edbe6660fc",
+                "92b84564520854ab"
+            ]
+        ]
+    },
+    {
+        "id": "7de49d77a632275a",
+        "type": "debug",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "92b84564520854ab",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "new Afile",
+        "func": "\nmsg.filename = context.global.get(\"AUDIOCONFFILENAME\");\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 180,
+        "wires": [
+            [
+                "b842352a4fe830ed"
+            ]
+        ]
+    },
+    {
+        "id": "b842352a4fe830ed",
+        "type": "file",
+        "z": "8d90a5ae55857ec5",
+        "g": "52128944b93b0aaa",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1060,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5e52acd2a4ce9e21",
+        "type": "function",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "filetoplay",
+        "func": "\nvar msg2 = { payload : msg.directory + msg.file };\n\nreturn msg2;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 720,
+        "wires": [
+            [
+                "7456347210ef4c4a"
+            ]
+        ]
+    },
+    {
+        "id": "90c607819dc5ea59",
+        "type": "debug",
+        "z": "8d90a5ae55857ec5",
+        "g": "8e68ca5ab98f2f2c",
+        "name": "debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 760,
+        "wires": []
+    }
+]
