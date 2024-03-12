@@ -46,10 +46,13 @@ void setup()
   for( short b=0; b<BELLCOUNT; b++ )
     {
     // IR sensor as bell input
-    pinMode(BELL_PIN[0], INPUT);
+    pinMode(BELL_PIN[b], INPUT);
+    
+    // let the pin settle
+    delay( 100 );
     
     // take an initial reading as a start point
-    BELL_state[b] = digitalRead(BELL_PIN[0]);
+    BELL_state[b] = digitalRead(BELL_PIN[b]);
     BELL_oldstate[b] = BELL_state[b];
     }
   
