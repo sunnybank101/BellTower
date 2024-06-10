@@ -14,7 +14,7 @@
 // setup pins for each of the possible 8 bells
 
 
-// Arduino ProMini
+// Arduino Nano
 #define BELL1_PIN 2
 #define BELL2_PIN 3
 #define BELL3_PIN 4
